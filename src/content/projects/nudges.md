@@ -40,7 +40,8 @@ proof:
   - { metric: "Repetition", value: "11th+ firing 15% useful (n=137) vs. 2nd–3rd 58% (n=76)", source: "findings.md" }
   - { metric: "Model", value: "held-out AUC 0.69 (logistic) vs. 0.57 (confidence alone); top-third precision 18% vs. 11% base", source: "time-ordered 70/30 split" }
   - { metric: "What-if", value: "cap 10: volume −54%, useful kept 82%, precision 35% → 48%", source: "in-sample replay" }
-links: []
-visibility: "Built on my own assistant's data: only aggregates and charts are published. No nudge text leaves my Mac."
+links:
+  - { label: "Code and findings on GitHub", href: "https://github.com/QuasiBroom14489/nudge-analysis" }
+visibility: "Public repo with aggregates and charts only; the row-level export stays on my Mac, and no nudge text leaves it."
 next: "Ship the repeat cap in Vesper, collect two weeks of new judgments, and publish the before/after precision."
 ---
