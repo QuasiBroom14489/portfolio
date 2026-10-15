@@ -35,9 +35,9 @@ export const capabilities: Capability[] = [
   },
   {
     key: 'fullstack', label: 'Full-stack web',
-    blurb: 'APIs, dashboards and products deployed for real users.',
+    blurb: 'APIs, dashboards and products deployed to production.',
     proof: [
-      { project: 'encore', text: 'Next.js app with 82 pages and 19 API routes, live on Vercel' },
+      { project: 'encore', text: 'Next.js app with 82 pages and 19 API routes, deployed on Vercel' },
       { project: 'offerdesk', text: 'React + Fastify, 43 REST routes, hosted on Vercel' },
       { project: 'alphalab', text: 'FastAPI (20 endpoints) + React dashboard (7 pages)' },
       { project: 'vesper', text: 'Fastify daemon with ~80 routes; Tauri desktop app' },
@@ -72,7 +72,7 @@ export const capabilities: Capability[] = [
     blurb: 'Decisions first, dashboards second.',
     proof: [
       { project: 'offerdesk', text: 'Keyboard-first UI with traffic-light follow-up signals' },
-      { project: 'encore', text: 'Four audiences, weekly digest, two markets' },
+      { project: 'encore', text: 'Four audiences, weekly digest, two cities' },
     ],
   },
   {

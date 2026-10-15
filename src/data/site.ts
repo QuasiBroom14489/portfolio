@@ -21,7 +21,7 @@ export const experience = [
     when: 'May 2026 – present',
     where: 'Atlanta, GA (remote)',
     points: [
-      'Shipped the public web beta of a live-music discovery app in two markets, with an AI pipeline that turns venue websites into published events.',
+      'Built a pre-launch web beta of a live-music discovery app covering two cities, with an AI pipeline that turns venue websites into published events.',
     ],
     project: 'encore',
   },

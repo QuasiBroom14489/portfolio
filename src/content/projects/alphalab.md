@@ -9,7 +9,7 @@ status: Building
 dates: Sep 2026 – present
 icon: alphalab
 accent: "#f59e0b"
-hero: { value: "0 of 16 passed", label: "pre-registered strategies graded out-of-sample — the grading working as designed" }
+hero: { value: "16 of 16 lucky strategies rejected", label: "pre-registered, graded only on data they never saw" }
 stats:
   - { value: "518", label: "test cases" }
   - { value: "11", label: "point-in-time data feeds" }

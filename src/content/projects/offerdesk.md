@@ -14,7 +14,7 @@ stats:
   - { value: "123", label: "test cases" }
   - { value: "43", label: "REST API routes" }
   - { value: "7", label: "architecture decision records" }
-  - { value: "2 days", label: "of commits, Sep 29–30 2026" }
+  - { value: "12", label: "event kinds in an append-only log" }
 problem: "During recruiting season, applications scatter across a spreadsheet, an inbox, LinkedIn and a folder of resume_final_v3.pdf files. The questions that matter get lost — who went quiet, what's due this week, which résumé went where — because a status column only knows where things stand now, not how they got there."
 built:
   - "**An event-sourced core.** Every save, application, outreach, reply and interview is a new row in an append-only log; database triggers block edits and deletes. Status, follow-ups, response rate and the funnel are derived from that history, never stored."
@@ -35,7 +35,7 @@ proof:
   - { metric: "Interfaces", value: "43 REST routes · 18 MCP tools · 7 dashboard pages", source: "public repo" }
   - { metric: "Data model", value: "12 event kinds · 8 pipeline stages · 4 append-only triggers", source: "public repo" }
   - { metric: "Decisions", value: "7 ADRs", source: "docs/decisions" }
-  - { metric: "Pace", value: "23 commits, Sep 29–30 2026", source: "git history" }
+  - { metric: "Commits", value: "23", source: "git history" }
 links:
   - { label: "Code on GitHub", href: "https://github.com/QuasiBroom14489/offerdesk" }
 visibility: "Public, MIT-licensed. Demo visuals use fictional seed data only."

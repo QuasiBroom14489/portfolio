@@ -5,11 +5,11 @@ tagline: Every show in town, one map
 oneLiner: "A live-music app where an AI pipeline reads venue websites every day and decides which shows are reliable enough to publish."
 tier: flagship
 order: 1
-status: Live
+status: Beta
 dates: May 2026 – present
 icon: encore
 accent: "#d946ef"
-hero: { value: "221 venues · 2 cities", label: "Atlanta and South Bend, live in public beta" }
+hero: { value: "221 venues · 2 cities", label: "Atlanta and South Bend venues, pre-launch beta" }
 stats:
   - { value: "44", label: "Postgres migrations" }
   - { value: "32", label: "tables, all with row-level security" }
@@ -21,7 +21,7 @@ built:
   - "**Messy-data cleanup.** Free-text performer names are matched to artist profiles with Postgres trigram similarity (0.7+ is a match, lower creates a stub flagged for review). User-submitted venues are normalized by an LLM, geocoded and de-duplicated before an admin approves them."
   - "**Source health monitoring.** Every venue source runs in isolation, and a dashboard buckets each one as healthy, stale, failing or never-run from its success rate over the last 10 runs."
   - "**Postgres + PostGIS backend.** 44 migrations, 32 tables with row-level security on every one (112 policies), 52 SQL functions and PostGIS radius search behind the Tonight feed."
-  - "**A full product for four audiences.** Fans get the Tonight feed, map, search, RSVPs, follows and groups; musicians post gigs; venues manage their own sources; admins run the console. A weekly digest email and SEO landing pages drive growth."
+  - "**A full product for four audiences.** Fans get the Tonight feed, map, search, RSVPs, follows and groups; musicians post gigs; venues manage their own sources; admins run the console. A weekly digest email and SEO landing pages are built for launch."
 how:
   - "Venue sites"
   - "Daily scrape"
@@ -37,9 +37,8 @@ proof:
   - { metric: "AI thresholds", value: "drop < 0.55 · auto-publish ≥ 0.8 / 0.9 · artist match ≥ 0.7", source: "ingestion and artist-matching code" }
   - { metric: "Coverage", value: "221 venues seeded (148 Atlanta, 73 South Bend)", source: "seed migrations" }
   - { metric: "CI/CD", value: "4 GitHub Actions workflows: checks, PR previews, production deploys, mobile build", source: ".github/workflows" }
-  - { metric: "Search footprint", value: "189 pages known to Google Search Console (Jul 30 2026)", source: "Search Console export" }
 links:
   - { label: "Open the live app", href: "https://therealencoreapp.com" }
 visibility: "Live product. The code is in a private repo, so this page shows the design and the numbers instead."
-next: "Measure extraction accuracy with a labeled set of venue pages, and bring the Expo mobile app back once the web beta's numbers justify it."
+next: "Measure extraction accuracy with a labeled set of venue pages, and launch the web beta in Atlanta, then bring back the Expo mobile app."
 ---

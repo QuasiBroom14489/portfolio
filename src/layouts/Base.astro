@@ -20,6 +20,7 @@ const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/i
   <title>{full}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content={full} />
   <meta property="og:description" content={description} />

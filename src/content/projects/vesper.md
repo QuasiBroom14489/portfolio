@@ -20,7 +20,7 @@ built:
   - "**One headless brain, thin clients.** A Fastify daemon (about 80 HTTP/WebSocket routes) serves a Tauri desktop app, a terminal CLI, a native SwiftUI iPhone/iPad app with widgets and a Share extension, and a Telegram bot. Every action is written to an append-only SQLite event log before anyone is notified."
   - "**Tools and model routing.** 39 MCP tools (vault search, semantic recall, reminders, scheduling, screen vision). A router sends each request to Claude, Codex or a local Qwen model and fails over when a quota runs out — 44 of 108 routed turns were answered on-device."
   - "**An intuition engine that gets graded.** A local model checks deadlines and the vault on every tick and raises nudges I can mark useful, wrong or noise in one tap: 1,611 nudges raised and 378 judged by hand, a dataset that drives the next fix."
-  - "**Local-first memory and senses.** Hybrid semantic + keyword search (local embeddings, FTS5, reciprocal-rank fusion) over 5,065 chunks, on-device speech-to-text (~1.2 s for a 2.5 s clip) and screen OCR. None of it leaves the Mac."
+  - "**Local-first memory and senses.** Hybrid semantic + keyword search (local embeddings, FTS5, reciprocal-rank fusion) over 5,065 chunks, fed by voice captures routed into a ~2,000-note vault that Vesper searches; on-device speech-to-text (~1.2 s for a 2.5 s clip) and screen OCR. None of it leaves the Mac."
   - "**Built to last.** 46 ADRs, 321 tests, secret scanning and dependency audits in CI. A security audit fixed 14 advisories, and a watchdog cut detection of a stuck local model from 12 days to about 75 seconds."
 how:
   - "Desktop · phone · terminal · Telegram"

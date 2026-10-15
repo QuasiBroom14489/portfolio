@@ -42,6 +42,9 @@ export function startIntro(root: HTMLElement) {
   let sp = progress(), lastTick = -1, dirty = true, running = false, zoomEnd = SCREEN_ZOOM;
 
   function drawDesk(z: number, lid: number) {
+    // snap to whole device pixels per scene pixel so no rows or columns drop mid-zoom
+    const k = view.width / W;
+    if (z > 1) z = Math.max(1, Math.round(z * k) / k);
     const sw = W / z, sh = H / z, fx = 320, fy = 254 - lid * 50;
     ctx.drawImage(natD, clamp(fx - sw / 2, 0, W - sw), clamp(fy - sh / 2, 0, H - sh), sw, sh, 0, 0, view.width, view.height);
   }

@@ -3,5 +3,5 @@ const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 export const inline = (s: string) => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 
 export const statusClass: Record<string, string> = {
-  Live: 'live', 'Daily use': 'daily', 'Public repo': 'public', Building: 'building',
+  Live: 'live', Beta: 'beta', 'Daily use': 'daily', 'Public repo': 'public', Building: 'building',
 };

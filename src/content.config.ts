@@ -13,7 +13,7 @@ const projects = defineCollection({
     oneLiner: z.string(), // outcome first
     tier: z.enum(['flagship', 'also']),
     order: z.number(),
-    status: z.enum(['Live', 'Daily use', 'Public repo', 'Building', 'Course project', 'Gift build']),
+    status: z.enum(['Live', 'Beta', 'Daily use', 'Public repo', 'Building', 'Course project', 'Gift build']),
     dates: z.string(),
     icon: z.string(),
     accent: z.string(),
