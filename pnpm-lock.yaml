@@ -17,6 +17,10 @@ importers:
       astro:
         specifier: 7.3.8
         version: 7.3.8(yaml@2.9.1)
+    devDependencies:
+      yaml:
+        specifier: 2.9.1
+        version: 2.9.1
 
 packages:
 
