@@ -15,6 +15,9 @@ stats:
   - { value: "321", label: "automated tests" }
   - { value: "46", label: "architecture decision records" }
   - { value: "5", label: "clients: desktop, iPhone/iPad, terminal, Telegram, Claude Code" }
+shots:
+  - { src: "/shots/vesper/intuition.webp", alt: "Vesper's Intuition pane: review-mode delivery with 1,723 nudges raised, 380 judged and 32% judged useful, a confidence histogram with a draggable review floor at 0.75, and loop settings for interval, cooldown and minimum confidence.", caption: "The intuition engine, graded: every nudge arrives with verdict buttons, and the threshold is tuned on the judged history.", h: 675 }
+  - { src: "/shots/vesper/log.webp", alt: "Vesper's Log pane filtered to tool events: numbered tool.call and tool.result rows for WebSearch, Read, Write and Glob, each with a status and duration.", caption: "The append-only event log every other view is built from, here filtered to tool calls (failures included).", h: 850 }
 problem: "Siri knows nothing about my life and can't act on it. I wanted one assistant that reads my notes vault, school deadlines and email, works the same from my laptop, phone and terminal, points out what I'm forgetting — and keeps working when one AI provider hits its limit."
 built:
   - "**One headless brain, thin clients.** A Fastify daemon (about 80 HTTP/WebSocket routes) serves a Tauri desktop app, a terminal CLI, a native SwiftUI iPhone/iPad app with widgets and a Share extension, and a Telegram bot. Every action is written to an append-only SQLite event log before anyone is notified."
