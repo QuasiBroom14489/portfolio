@@ -15,7 +15,10 @@ export const capabilities: Capability[] = [
   {
     key: 'stats', label: 'Statistics & quant research',
     blurb: 'Out-of-sample testing and corrections for how many things you tried.',
-    proof: [{ project: 'alphalab', text: 'Deflated Sharpe, pre-registration, out-of-sample-only verdicts, look-ahead tests' }],
+    proof: [
+      { project: 'alphalab', text: 'Deflated Sharpe, pre-registration, out-of-sample-only verdicts, look-ahead tests' },
+      { project: 'nudges', text: 'Held-out logistic model and a what-if replay over 343 hand-judged nudges, limits reported' },
+    ],
   },
   {
     key: 'llm', label: 'LLM agents & MCP tooling',

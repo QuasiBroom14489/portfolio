@@ -11,6 +11,7 @@
 .pw .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 4px 0 16px; padding-bottom: 8px; }
 .pw .shots figure { margin: 0; flex: 0 0 auto; scroll-snap-align: start; }
 .pw .shots a { display: block; border: 2px solid var(--edge); background: var(--night); box-shadow: 3px 3px 0 rgba(10, 6, 2, .3); }
+.pw .shots a:has(img[src$=".svg"]) { background: var(--paper); }
 .pw .shots img { display: block; height: clamp(200px, 40vw, 300px); width: auto; image-rendering: auto; }
 .pw .shots figcaption { font-size: .82rem; color: var(--ink-2); margin-top: 6px; line-height: 1.35; width: 0; min-width: 100%; }
 .pw .cta { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 6px; }

@@ -7,6 +7,7 @@ export const glyphs: Record<string, string[]> = {
   flextracker: ['..wwwwwwww..', '..w......w..', '..w..ww..w..', '..w.w....w..', '..w..ww..w..', '..w....w.w..', '..w..ww..w..', '..w......w..', '..w......w..', '..w..ww..w..', '..wwwwwwww..', '............'],
   shopwright: ['............', 'wwwwwwwwwwww', 'w.ww.ww.ww.w', 'wwwwwwwwwwww', '.w........w.', '.w.ww..ww.w.', '.w.ww..ww.w.', '.w........w.', '.w.ww..ww.w.', '.w.ww..ww.w.', '.wwwwwwwwww.', '............'],
   eink: ['wwwwwwwwwwww', 'w..........w', 'w.wwwwwww..w', 'w.w.....w..w', 'w.w.....w..w', 'w.wwwwwww..w', 'w...w......w', 'w..........w', 'w..........w', 'w..........w', 'wwwwwwwwwwww', '............'],
+  nudges: ['.....ww.....', '....wwww....', '...wwwwww...', '...wwwwww...', '...wwwwww...', '..wwwwwwww..', '..wwwwwwww..', '.wwwwwwwwww.', '............', '.....ww.....', '............', '............'],
   skills: ['www.www.www.', 'www.www.www.', 'www.www.www.', '............', 'www.....www.', 'www.....www.', 'www.....www.', '............', 'www.www.....', 'www.www.....', 'www.www.....', '............'],
   resume: ['.wwwwwww....', '.w.....ww...', '.w.....w.w..', '.w.....wwww.', '.w........w.', '.w.wwwwww.w.', '.w........w.', '.w.wwwwww.w.', '.w........w.', '.w.wwww...w.', '.wwwwwwwwww.', '............'],
   contact: ['............', 'wwwwwwwwwwww', 'ww........ww', 'w.w......w.w', 'w..w....w..w', 'w...wwww...w', 'w..........w', 'w..........w', 'wwwwwwwwwwww', '............', '............', '............'],
