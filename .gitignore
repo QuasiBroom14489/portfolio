@@ -24,3 +24,5 @@ scene/build/renders/
 PLAN.md
 notes/
 .claude/
+.vercel
+.env*
