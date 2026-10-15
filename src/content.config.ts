@@ -19,6 +19,8 @@ const projects = defineCollection({
     accent: z.string(),
     hero: stat,
     stats: z.array(stat).default([]),
+    // screenshots in public/shots/<slug>/, shown as a strip after the hero; w/h are the file's pixel size
+    shots: z.array(z.object({ src: z.string(), alt: z.string(), caption: z.string(), w: z.number().default(1600), h: z.number().default(1000) })).default([]),
     problem: z.string(),
     built: z.array(z.string()),
     how: z.array(z.string()).default([]), // pipeline steps for the small diagram

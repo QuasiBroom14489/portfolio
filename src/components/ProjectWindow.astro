@@ -25,6 +25,16 @@ const tid = `w-${project.id}`;
     {p.stats.length > 0 && (
       <ul class="stats">{p.stats.map(s => <li><b>{s.value}</b><span>{s.label}</span></li>)}</ul>
     )}
+    {p.shots.length > 0 && (
+      <div class="shots" role="group" aria-label={`${p.title} screenshots`}>
+        {p.shots.map(s => (
+          <figure>
+            <a href={s.src} target="_blank" rel="noopener"><img src={s.src} alt={s.alt} width={s.w} height={s.h} loading="lazy" decoding="async" /></a>
+            <figcaption>{s.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
     {p.links.length > 0 && (
       <p class="cta">{p.links.map(l => <a class="btn gold" href={l.href} rel="noopener" target="_blank">{l.label} ↗</a>)}</p>
     )}

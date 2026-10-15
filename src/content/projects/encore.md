@@ -15,6 +15,10 @@ stats:
   - { value: "32", label: "tables, all with row-level security" }
   - { value: "4", label: "scheduled jobs (ingest, digests, reminders)" }
   - { value: "82", label: "pages across fans, musicians, venues, admin" }
+shots:
+  - { src: "/shots/encore/tonight.webp", alt: "Encore's Tonight feed for Atlanta: genre filter chips above cards for Sweet Georgia's Juke Joint, Aisle 5, Commune ATL, Boggs Social & Supply, 529 and Buckhead Theatre, each with a time, price and distance.", caption: "The Tonight feed: every show the pipeline published, soonest first." }
+  - { src: "/shots/encore/phone.webp", alt: "Encore on a phone: the Atlanta feed with a search bar, filter chips, show cards and a bottom tab bar.", caption: "The same feed on a phone.", w: 780, h: 1688 }
+  - { src: "/shots/encore/map.webp", alt: "Encore's map of metro Atlanta with green markers for shows tonight and orange markers for upcoming shows, clustered around Midtown and Little Five Points.", caption: "Map view: green pins are tonight, orange are upcoming." }
 problem: "Live music in Atlanta is spread across hundreds of venue websites, Instagram posts and calendars, each in a different format, and small rooms like bars and breweries never show up anywhere. Finding a show tonight means checking a dozen sites, so Encore pulls it all into one feed and map — and the hard part is the data."
 built:
   - "**AI ingestion with confidence gating.** A daily job scrapes each venue's events page, and an LLM extracts events into a strict Zod schema with a confidence score. Under 0.55 is dropped; 0.8+ from venue-verified sources (0.9+ for admin-added ones) publishes automatically; everything in between waits in an admin review queue."
