@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="All projects (list view)" app="List view">
+  <main id="main" class="page">
+    <article class="win ls" aria-labelledby="ls-t">
+      <div class="bar"><h1 id="ls-t" class="t">{site.name} — all projects</h1><a class="x" href="/" aria-label="Back to the desktop">×</a></div>
+      <div class="body">
+        <p class="head">{site.headline}</p>
+        <p>{site.school} · <a href={site.links.resume.href}>Résumé</a> · <a href={site.links.github.href}>GitHub</a> · <a href={site.links.linkedin.href}>LinkedIn</a> · <a href={site.links.email.href}>{site.links.email.handle}</a></p>
+        {['flagship', 'also'].map(tier => (
+          <>
+            <h2 class="eyebrow">{tier === 'flagship' ? 'Flagship projects' : 'Also built'}</h2>
+            <ul class="list">
+              {all.filter(p => p.data.tier === tier).map(p => (
+                <li><a href={`/projects/${p.id}`}><b>{p.data.title}</b></a> <span class="r">— {p.data.role} · {p.data.status}</span><br />{p.data.oneLiner} <span class="n">{p.data.hero.value}: {p.data.hero.label}.</span></li>
+              ))}
+            </ul>
+          </>
+        ))}
+      </div>
+    </article>
+  </main>
+</Base>

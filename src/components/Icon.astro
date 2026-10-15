@@ -1,0 +1,18 @@
+---
+import { glyphs } from '../data/icons';
+interface Props { name: string; accent?: string; size?: number; label?: string }
+const { name, accent = '#c99a62', size = 48, label } = Astro.props;
+const rows = glyphs[name] ?? glyphs.folder;
+const lum = (h => { const n = parseInt(h.slice(1), 16); return (0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) / 255; })(accent);
+const ink = lum > 0.62 ? '#1b1410' : '#fffaf0';
+const px: { x: number; y: number }[] = [];
+rows.forEach((r, y) => [...r].forEach((c, x) => c === 'w' && px.push({ x: x + 2, y: y + 2 })));
+---
+<svg class="icon" width={size} height={size} viewBox="0 0 16 16" shape-rendering="crispEdges" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'}>
+  <rect x="0" y="1" width="16" height="14" fill="#1b1410" /><rect x="1" y="0" width="14" height="16" fill="#1b1410" />
+  <rect x="1" y="1" width="14" height="14" fill={accent} />
+  <rect x="1" y="1" width="14" height="1" fill="#fff" opacity=".35" />
+  <rect x="1" y="14" width="14" height="1" fill="#000" opacity=".25" />
+  {px.map(p => <rect x={p.x} y={p.y + 1} width="1" height="1" fill={lum > 0.62 ? '#fff' : '#000'} opacity=".35" />)}
+  {px.map(p => <rect x={p.x} y={p.y} width="1" height="1" fill={ink} />)}
+</svg>

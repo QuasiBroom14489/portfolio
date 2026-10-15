@@ -1,0 +1,59 @@
+/* Styles for every window that can open over the desktop (loaded on all pages). */
+.pw .body { padding: 22px 24px 18px; }
+.pw .one { font-size: 1.22rem; line-height: 1.45; font-weight: 600; margin-bottom: 16px; max-width: 62ch; }
+.pw .hero { border: 2px solid var(--edge); background: var(--navy); color: var(--cream); padding: 14px 16px; margin-bottom: 12px; box-shadow: inset 6px 0 0 var(--accent); }
+.pw .big { font: 400 clamp(1.4rem, 4.2vw, 2.1rem)/1.15 var(--pixel); color: var(--gold-2); }
+.pw .lbl { color: var(--muted); font-size: .95rem; margin-top: 4px; }
+.pw .stats { list-style: none; padding: 0; margin: 0 0 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.pw .stats li { background: var(--paper-2); border: 2px solid var(--edge); padding: 8px 10px; display: flex; flex-direction: column; }
+.pw .stats b { font: 400 1.1rem/1.2 var(--pixel); }
+.pw .stats span { font-size: .85rem; color: var(--ink-2); line-height: 1.3; }
+.pw .cta { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 6px; }
+.pw section { margin-top: 20px; }
+.pw section p { max-width: 70ch; }
+.pw .built { padding-left: 1.1em; display: grid; gap: 8px; max-width: 72ch; }
+.pw .built li::marker { color: var(--accent); }
+.pw .flow { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; counter-reset: s; }
+.pw .flow li { position: relative; background: #fff; border: 2px solid var(--edge); padding: 6px 10px; font-size: .88rem; font-weight: 600; }
+.pw .flow li:not(:last-child)::after { content: '→'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--ink-2); }
+.pw .flow li:not(:last-child) { margin-right: 10px; }
+.pw .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.pw .caps li { background: #fff6d6; border-color: #e3c56a; }
+.pw .proof { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.pw .proof th, .pw .proof td { text-align: left; vertical-align: top; padding: 7px 8px; border-top: 1px solid #d9c9aa; }
+.pw .proof th { width: 30%; font-weight: 600; color: var(--ink-2); }
+.pw .proof small { display: block; color: #8a7a62; font-size: .78rem; }
+.pw .vis { margin-top: 20px; padding-top: 10px; border-top: 2px dashed #d6c6a6; font-size: .86rem; color: var(--ink-2); }
+@media (max-width: 640px) { .pw .two { grid-template-columns: 1fr; } .pw .body { padding: 18px 16px; } .pw .proof th { width: 38%; } }
+.sk .lead { font-weight: 600; }
+.sk .scroll { overflow-x: auto; margin: 6px 0 10px; border: 2px solid var(--edge); background: #fff; }
+.sk .matrix { border-collapse: collapse; width: 100%; font-size: .88rem; }
+.sk .matrix th, .sk .matrix td { border: 1px solid #e2d6bd; padding: 6px 8px; text-align: center; }
+.sk .matrix thead th { background: var(--paper-2); font-weight: 600; vertical-align: bottom; }
+.sk .matrix thead a { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; color: var(--ink); font-size: .78rem; }
+.sk .matrix tbody th { text-align: left; white-space: nowrap; }
+.sk .matrix td a { text-decoration: none; color: var(--navy-2); font-size: 1.05rem; }
+.sk .matrix td span { color: #c9b99c; }
+.sk .cap { margin-top: 18px; scroll-margin-top: 60px; }
+.sk .cap h2 { font: 400 .9rem/1.2 var(--pixel); color: var(--navy); }
+.sk .cap:target h2 { background: var(--gold); display: inline-block; padding: 2px 4px; }
+.sk .blurb { color: var(--ink-2); margin: 4px 0 6px; }
+.sk .cap ul { display: grid; gap: 4px; }
+.ab .head { font-size: 1.3rem; font-weight: 700; line-height: 1.35; }
+.ab .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 22px; }
+.ab .eyebrow { margin-top: 18px; }
+.ab .job { margin: 8px 0 14px; }
+.ab .job h3 { font-size: 1.05rem; }
+.ab .when { color: var(--ink-2); font-size: .9rem; margin: 2px 0 6px; }
+.ab .job ul { display: grid; gap: 4px; max-width: 72ch; }
+.narrow > .win { width: min(560px, 100%); }
+.ct .lead { font-size: 1.05rem; }
+.ct dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 12px 0 0; }
+.ct dt { font: 400 .7rem/1.6 var(--pixel); color: var(--ink-2); }
+.ct dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.rs .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.rs .pdf { width: 100%; height: min(1100px, 80vh); border: 2px solid var(--edge); background: #fff; }
+.ls .head { font-size: 1.2rem; font-weight: 700; }
+.ls .eyebrow { margin-top: 18px; }
+.ls .list { list-style: none; padding: 0; display: grid; gap: 12px; }
+.ls .r, .ls .n { color: var(--ink-2); }

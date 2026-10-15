@@ -1,0 +1,183 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+import { capabilities } from '../data/capabilities';
+import { statusClass } from '../lib/inline';
+
+const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const flagships = all.filter(p => p.data.tier === 'flagship');
+const also = all.filter(p => p.data.tier === 'also');
+const topCaps = capabilities.slice(0, 6);
+---
+<Base>
+  <section id="intro" class="intro" aria-label="Intro: my dorm room in St. Edward's Hall">
+    <div class="stage">
+      <img class="poster" src="/scene/room.png" width="640" height="360" alt="" />
+      <canvas width="640" height="360" role="img" aria-label="Pixel-art scene of my St. Edward's Hall dorm room on a sunny fall afternoon. Scrolling pushes in to the desk under the window, opens the laptop, and zooms into its screen, which is this site's desktop."></canvas>
+      <div class="cap">
+        <p class="nm">{site.name}</p>
+        <p class="hl">{site.headline}</p>
+        <p class="sb">{site.school} · this is my room in St. Edward's Hall</p>
+      </div>
+      <p class="hint" aria-hidden="true">Scroll to open my laptop ↓</p>
+      <a class="go btn gold" href="#main">Skip to projects ↓</a>
+    </div>
+  </section>
+  <main id="main" class="desk">
+    <section class="win about" aria-labelledby="about-t">
+      <div class="bar"><Icon name="about" accent="#ebbd2a" size={22} /><h1 id="about-t" class="t">About — {site.name}</h1></div>
+      <div class="body">
+        <p class="name">{site.name}</p>
+        <p class="head">{site.headline}</p>
+        <p class="meta">{site.school} · from {site.hometown}</p>
+        <p class="sum">{site.summary}</p>
+        <p class="actions">
+          <a class="btn gold" href={site.links.resume.href} target="_blank" rel="noopener"><Icon name="resume" accent="#c99a62" size={18} /> Résumé PDF</a>
+          <a class="btn" href={site.links.github.href} target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" href={site.links.linkedin.href} target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn plain" href={site.links.email.href}>{site.links.email.handle}</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="win caps" aria-labelledby="caps-t">
+      <div class="bar"><Icon name="skills" accent="#52648a" size={22} /><h2 id="caps-t" class="t">Capabilities — backed by projects</h2><a class="x" href="/skills" data-open aria-label="Open the full skills matrix">↗</a></div>
+      <div class="body">
+        <ul>
+          {topCaps.map(c => (
+            <li><a href={`/skills#${c.key}`}>{c.label}</a><span>{c.proof.map(pr => all.find(p => p.id === pr.project)?.data.title).filter(Boolean).join(' · ')}</span></li>
+          ))}
+        </ul>
+        <a class="more" href="/skills" data-open>See the full matrix with proof →</a>
+      </div>
+    </section>
+
+    <section id="projects" class="flagships" aria-label="Flagship projects">
+      {flagships.map(p => (
+        <a class="win widget" href={`/projects/${p.id}`} data-open style={`--accent:${p.data.accent}`}>
+          <div class="bar"><Icon name={p.data.icon} accent={p.data.accent} size={22} /><h2 class="t">{p.data.title}</h2><span class={`tag ${statusClass[p.data.status] ?? ''}`}>{p.data.status}</span></div>
+          <div class="body">
+            <p class="role">{p.data.role}</p>
+            <p class="tl">{p.data.oneLiner}</p>
+            <p class="num">{p.data.hero.value}</p>
+            <p class="numl">{p.data.hero.label}</p>
+            <ul class="mini">{p.data.stats.slice(0, 3).map(s => <li><b>{s.value}</b> {s.label}</li>)}</ul>
+            <span class="open">Open {p.data.title} →</span>
+          </div>
+        </a>
+      ))}
+    </section>
+
+    <section class="win alsob" aria-labelledby="also-t">
+      <div class="bar"><Icon name="folder" accent="#c99a62" size={22} /><h2 id="also-t" class="t">Also built</h2></div>
+      <div class="body">
+        <ul>
+          {also.map(p => (
+            <li><a href={`/projects/${p.id}`} data-open><Icon name={p.data.icon} accent={p.data.accent} size={32} /><span><b>{p.data.title}</b><small>{p.data.role}</small></span></a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <nav class="dock" aria-label="Dock">
+      {flagships.map(p => <a href={`/projects/${p.id}`} data-open><Icon name={p.data.icon} accent={p.data.accent} size={40} /><span>{p.data.title}</span></a>)}
+      <i aria-hidden="true"></i>
+      <a href="/skills" data-open><Icon name="skills" accent="#52648a" size={40} /><span>Skills</span></a>
+      <a href="/about" data-open><Icon name="about" accent="#ebbd2a" size={40} /><span>About</span></a>
+      <a href="/resume" data-open><Icon name="resume" accent="#c99a62" size={40} /><span>Résumé</span></a>
+      <a href="/contact" data-open><Icon name="contact" accent="#2c4a90" size={40} /><span>Contact</span></a>
+      <a href="/list"><Icon name="list" accent="#8a7a62" size={40} /><span>List view</span></a>
+      <a class="roomlink" href="#intro"><Icon name="room" accent="#c99a62" size={40} /><span>Room</span></a>
+    </nav>
+  </main>
+  <div id="layer" hidden></div>
+  <script src="../scripts/wm.ts"></script>
+  <script>
+    import { startIntro } from '../scene/intro';
+    const root = document.getElementById('intro');
+    const html = document.documentElement;
+    if (root && /^#(main|projects)$/.test(location.hash)) {
+      // arriving on the desktop: hide the scene now instead of after it builds
+      html.classList.add('intro-done');
+      (root.querySelector('.stage') as HTMLElement).style.visibility = 'hidden';
+    }
+    if (root && !html.classList.contains('skip-intro')) {
+      // let the poster paint first; building the room takes a moment
+      const go = () => startIntro(root);
+      'requestIdleCallback' in window ? requestIdleCallback(go, { timeout: 600 }) : setTimeout(go, 60);
+    }
+  </script>
+</Base>
+<style>
+  .intro { display: none; }
+  :global(html.js:not(.skip-intro)) .intro { display: block; position: relative; height: 400vh; }
+  :global(html.js:not(.skip-intro)) .desk { margin-top: -100vh; }
+  :global(html) { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
+  .stage { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; z-index: 30; background: var(--night); display: grid; place-items: center; }
+  .stage canvas, .stage .poster { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); image-rendering: pixelated; }
+  .stage .poster { width: max(100vw, 177.78vh); height: auto; }
+  .intro.ready .poster { display: none; }
+  .intro:not(.ready) canvas { visibility: hidden; }
+  .cap { position: absolute; left: clamp(16px, 4vw, 56px); bottom: clamp(70px, 12vh, 140px); max-width: min(560px, calc(100vw - 32px)); background: rgba(21, 18, 15, .82); color: var(--cream); border: 2px solid #000; box-shadow: var(--shadow); padding: 16px 18px; }
+  .cap .nm { font: 400 clamp(1.3rem, 3.4vw, 2rem)/1.1 var(--pixel); color: var(--gold-2); margin-bottom: 8px; }
+  .cap .hl { font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-weight: 700; line-height: 1.35; margin-bottom: 6px; }
+  .cap .sb { color: var(--muted); font-size: .92rem; margin: 0; }
+  .hint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); margin: 0; font: 400 .72rem/1 var(--pixel); color: var(--cream); background: rgba(21, 18, 15, .8); padding: 8px 10px; border: 2px solid #000; animation: bob 1.6s steps(2) infinite; white-space: nowrap; }
+  @keyframes bob { 50% { transform: translate(-50%, -4px); } }
+  .go { position: absolute; right: clamp(16px, 3vw, 40px); top: 48px; }
+  .dock .roomlink { display: none; }
+  :global(html.js:not(.skip-intro)) .dock .roomlink { display: flex; }
+  :global(html.js:not(.skip-intro):not(.intro-done)) .dock { visibility: hidden; }
+  @media (max-aspect-ratio: 5/4) { .stage .poster { width: auto; height: 58vh; max-width: none; } .stage .poster, .stage.contain canvas { top: 40%; } }
+  .stage.contain canvas { top: 40%; }
+  @media (max-width: 700px) {
+    :global(html.js:not(.skip-intro)) .intro { height: 300vh; }
+    .cap { bottom: 64px; padding: 12px 14px; }
+    .go { top: 44px; }
+  }
+  .desk { min-height: 100dvh; padding: 52px 24px 110px; display: grid; gap: 18px; grid-template-columns: minmax(360px, 440px) minmax(0, 1fr) 200px; grid-template-areas: 'about proj also' 'caps proj also'; align-items: start; max-width: 1480px; margin: 0 auto; }
+  .about { grid-area: about; } .caps { grid-area: caps; } .flagships { grid-area: proj; } .alsob { grid-area: also; }
+  .name { font: 400 1.7rem/1.1 var(--pixel); margin: 0 0 8px; color: var(--navy); }
+  .head { font-size: 1.3rem; line-height: 1.35; font-weight: 700; margin-bottom: 6px; }
+  .meta { color: var(--ink-2); font-weight: 600; }
+  .sum { font-size: .96rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; }
+  .caps ul { list-style: none; padding: 0; margin: 0; }
+  .caps li { display: flex; flex-direction: column; padding: 7px 0; border-top: 1px solid #d9c9aa; }
+  .caps li:first-child { border-top: 0; }
+  .caps li a { font-weight: 700; text-decoration: none; }
+  .caps li span { font-size: .84rem; color: var(--ink-2); }
+  .more { display: inline-block; margin-top: 8px; font-weight: 600; }
+  .flagships { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .widget { color: var(--ink); text-decoration: none; transition: transform .08s steps(2); }
+  .widget:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(10,6,2,.45); }
+  .widget .body { display: flex; flex-direction: column; flex: 1; box-shadow: inset 0 4px 0 var(--accent); }
+  .role { font: 400 .66rem/1.2 var(--pixel); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 6px; }
+  .tl { font-size: .98rem; line-height: 1.45; font-weight: 600; }
+  .num { font: 400 1.25rem/1.2 var(--pixel); color: var(--navy); margin: 4px 0 2px; }
+  .numl { font-size: .84rem; color: var(--ink-2); line-height: 1.35; }
+  .mini { list-style: none; padding: 0; margin: 2px 0 10px; font-size: .84rem; color: var(--ink-2); }
+  .mini b { color: var(--ink); }
+  .open { margin-top: auto; align-self: flex-start; font: 400 .7rem/1 var(--pixel); background: var(--navy-2); color: var(--cream); padding: 8px 10px 9px; border: 2px solid var(--edge); }
+  .widget:hover .open { background: var(--gold); color: var(--ink); }
+  .alsob ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+  .alsob a { display: flex; gap: 10px; align-items: center; text-decoration: none; color: var(--ink); padding: 6px; }
+  .alsob a:hover { background: var(--paper-2); }
+  .alsob span { display: flex; flex-direction: column; line-height: 1.25; }
+  .alsob small { color: var(--ink-2); font-size: .8rem; }
+  .alsob .body { padding: 10px; }
+  .dock { position: fixed; z-index: 40; left: 50%; bottom: 10px; transform: translateX(-50%); display: flex; gap: 6px; align-items: end; padding: 8px 10px; background: rgba(27, 20, 16, .88); border: 2px solid #000; box-shadow: var(--shadow); max-width: calc(100vw - 20px); overflow-x: auto; }
+  .dock a { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--cream); text-decoration: none; font-size: .7rem; font-weight: 600; padding: 2px 4px; min-width: 56px; }
+  .dock a:hover { color: var(--gold-2); }
+  .dock a:hover :global(svg) { transform: translateY(-4px); }
+  .dock i { width: 2px; align-self: stretch; background: #5a4c3b; margin: 4px 4px; }
+  @media (max-width: 1280px) { .desk { grid-template-columns: minmax(340px, 420px) minmax(0, 1fr); grid-template-areas: 'about proj' 'caps proj' 'also proj'; } .alsob ul { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 980px) {
+    .desk { grid-template-columns: 1fr; grid-template-areas: 'about' 'proj' 'also' 'caps'; padding: 48px 14px 30px; }
+    .dock { display: none; }
+  }
+  @media (max-width: 640px) { .flagships { grid-template-columns: 1fr; } .alsob ul { grid-template-columns: 1fr; } }
+</style>

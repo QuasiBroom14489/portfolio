@@ -1,0 +1,174 @@
+ST. ED'S HERO: BUILD SPEC v3 (single source of truth)
+
+I checked the contested points against the frames:
+- s46, s41 and f12 confirm a three-part window: narrow, wide, narrow. The wide center has a transom at about 27% down and a lower sash split into two panes.
+- s32 shows the picture rail at window-head height with a cream band above it.
+- f02 confirms the navy reads gray under lamp light. Daylit, it reads bluer (s05 #4a5c73).
+- f12, s40 and s46 show the raw floor is cool (#c4caca to #d3dadc).
+
+0. A OR B
+I use A as the base. One tall bronze three-part window centered on a cream end wall, glossy tile, walnut built-ins, the bunk, the heater and the picture rail are what St. Ed's rooms actually look like. A also keeps the desk-in-front-of-window close-up. From B I take the hall look for the side walls (navy above a honey-oak wainscot, an oak 4-panel door with frosted transom and brass, an oak window casing), the sun parallelogram on the side wall, the ceiling bounce glow, a backlit pothos in the window and strong floor reflections. These give the scene its ND navy and gold and a dark frame around a bright center. B's 20 ft depth, drapes, pendant, Windsor chair, crown molding and side-wall desk are rejected. Add a constant WALLS='hall'|'plaster'; 'plaster' makes the side walls cream with a 4" baseboard, which is the literal room.
+
+1. PALETTE (dark to light)
+Measured values are used unless marked otherwise.
+PLASTER   = ['#8a7f6e','#a89b85','#c2b69f','#d6cbb6','#e5dcc9','#f5ebd6']  // cool shade for window-facing planes: '#b4b3aa'
+CEIL      = ['#9e9586','#b9b0a3','#cfc7b8','#dfd9cd','#ebe7df']
+TILE      = ['#8c8a83','#aaa79f','#c2c0b9','#d0cec8','#dfddd6']  // ADJUSTED: about 30% cooler than the palette ramp, to meet the cool raw frames
+TILE_FX   = {seam:'#b4b2ab', glare:'#dde6e7', sun:'#fbf7ee', hot:'#ffffff', under:'#907760'}
+NAVYWALL  = ['#151b29','#1f2738','#2a3448','#36435d','#4b5872','#66708a']  // ADJUSTED: chroma raised to about 0.05, the daylit value, so it reads navy at 640x360
+NAVY_SUN  = ['#5e6274','#7d7b84','#9c9286','#bba98c']  // CHOSEN: sun on gray-navy turns warm gray, not light blue
+OAK       = ['#3a1b05','#552c0a','#6f3d12','#8c561d','#a8702e','#c99a62']  // glint '#ecc08a'
+OAK_HI    = ['#8c6841','#a87d4c','#c7955e','#ddb07a','#eec58f']  // rail tops and bevels
+OAK_SUN   = ['#a8702e','#c98a3a','#e0a050','#ecc08a','#f6d6a0']  // CHOSEN, from lamp-lit #aa680a
+BRASS     = ['#3a2712','#5a4322','#7f653b','#a68a55','#d0b172','#ecd08f']
+WALNUT    = ['#2a140e','#43271b','#5e3b2b','#7a5241','#986a55','#b8876e']
+WALNUT_SUN= ['#a0624a','#c9784f','#eda577','#ffd9a0']
+MATTRESS  = ['#1b2030','#2a3248','#3c4964','#52648a','#6a80a8','#8aa0c6']
+TRIM      = ['#2b1409','#4a2e1c','#5e3d2a','#987969']  // picture-rail ledge '#c4b698'
+HEATER    = ['#4f443a','#6e6153','#988672','#bba78f','#d2c1a7','#e6d9c2']
+BRONZE    = ['#0b0b0a','#1c1b19','#2d2c29','#474641','#67655d']  // faces that look up at the sky: '#3e5670'
+SCREEN    = ['#2e302d','#3b3e3b','#5a5c57','#7e7f77']
+TRANSOM   = ['#8c8775','#b4b6a2','#cfd4c2','#eef2e6']
+SKY       = ['#7da4bf','#96baca','#b4cfdc','#cde2ea','#e3eef0']  // clouds '#eef2f2', undersides '#b4c3ce'
+LAWN      = ['#3a4f22','#556d2c','#728c35','#8fa83e','#adc25a']
+TREE_GRN  = ['#1f2b22','#2a3a2f','#4a5f47','#73885a','#98ab68']
+SPRUCE    = ['#1a2422','#26332f','#3e504a','#5a6c62']
+MAPLE_RED = ['#4a1410','#7a1f16','#a8321f','#cf4a2a','#e8743c']  // CHOSEN (the video has no autumn)
+MAPLE_ORG = ['#5a2508','#8c3e0e','#c0601a','#e08a2c','#f2b450']  // CHOSEN
+MAPLE_GLD = ['#5a4210','#8a6a14','#c09a22','#e0c03c','#f4e07a']  // CHOSEN
+PATH      = ['#8f8670','#b3a685','#d2c49f','#e8dcbc','#f6eddd']
+LIME      = ['#4a4136','#85705a','#a9896b','#cbb79c','#e2d2bf']
+BRICK_ND  = ['#4b473c','#7a745f','#a89c7c','#c9bc93','#ddd0a6']
+SLATE     = ['#3f4d54','#4f5f66','#6d7d82','#8a989b']
+PAVER     = ['#5c5956','#77726d','#8f8983','#a9a29a']
+Keep the existing GOLD (Dome, accents) and the saturated NAVY (rug, pennant). Delete WOOD planks, PLANKS and BEAM.
+
+2. WIDE SHOT
+Camera: FOC 276.9, VX 320, VY 242 (was 266.7).
+RM = {xl:-6.5, xr:6.5, yf:-3.6, yc:10.4, zb:15}. That is 13 ft wide with a 14 ft ceiling. The back wall projects to 240x258 px (x 200–440, y 50–308), so it is taller than it is wide, and a ceiling band shows above it. Floor is visible from Z 8.45.
+SU = normalize([-0.55, 0.56, 0.62]), using the code's convention (the vector points toward the sun). That is about 33° elevation, coming from beyond the window and 41° to the left.
+
+Surfaces:
+- Back wall (Z 15): PLASTER, smooth with no noise. Step 3 overall, step 4 around the window from bounce, steps 2→1 within 0.6 ft of corners and near the heater. 4" TRIM baseboard (lit top 1px TRIM[3]).
+- Side walls (X ±6.5), from the floor up:
+  - oak base Y -3.6..-3.1 (OAK[1], 1px OAK[0] at the floor)
+  - bottom rail -3.1..-2.85
+  - flat recessed panels -2.85..-1.05
+  - top rail -1.05..-0.75
+  - cap molding -0.75..-0.45 (top 1px OAK_HI[2], undercut 1px OAK[0])
+  - stiles 0.3 ft wide every 2.2 ft along Z, starting from Z 15
+  - NAVYWALL from -0.45 to 8.3: step 4 at Z 15 fading to step 2 at Z 6, 1 step darker in the 0.5 ft under the rail and in corners
+  - picture rail at Y 8.3..8.45 on all three walls: 1px TRIM[1] strip, 1px '#c4b698' ledge above, 1px shadow below
+  - cream PLASTER frieze 8.45..10.4. No crown; square corner.
+- Ceiling (Y 10.4): CEIL. Step 4 over Z>12, step 2 toward the camera, step 1 within 0.5 ft of the wall joints. Warm bounce ellipse at (X 2, Z 13, r 3 ft), +1 step tinted '#cfbfa2'.
+- Floor: 1 ft tiles square to the walls.
+  - Seams: 1px TILE_FX.seam, faint and slightly irregular. Drop a seam row once tiles are under 4 px tall. 3% flecks of '#b9b6ae' and '#e4e2dc'.
+  - Gloss: trace the mirrored ray (Y' = -7.2 - Y) against the planes and the window glow. Mix 0.18 at Z 8.5 rising to 0.38 at Z 15. Smear 3 px vertically; no reflection on seam pixels.
+  - Floor-standing sprites get a flipped, one-step-darker, 30% alpha reflection smeared 2 px.
+  - Sun patch: TILE_FX.sun with a hot core and a 1–2 px soft edge. Under furniture: TILE_FX.under.
+- Lighting: ambient [.40,.42,.50], sun [1,.86,.66]. Keep the ray-marched shafts at ≤18% plus 1px dust motes. Vignette the near corners. Expect the right-wall patch to be a parallelogram whose top edge runs from about (475,139) to (640,295) and fills down to the floor line, with mullion and transom shadow bars across the oak and navy. The floor patch is only a sliver at y>335, because the desk blocks the low rays.
+
+Window (replaces all three Gothic windows; the Gothic shapes move outside):
+- Opening X -3.0..3.0, Y -0.9..8.2. Cream plaster reveal 0.9 ft deep, glass plane at Z 15.9. The right jamb is sunlit (PLASTER[5]); the left jamb and head soffit are in shade.
+- Honey-oak flat casing 0.4 ft wide on the wall face. Oak stool: top at Y -0.9, Z 14.8..15.9, X -3.4..3.4.
+- BRONZE frame members:
+  - outer frame 0.2 ft
+  - mullions centered at X ±1.55, 0.18 ft wide
+  - sidelights X ±(1.64..2.8), full height Y -0.7..8.0
+  - center X -1.46..1.46 with a transom bar at Y 5.5..5.7 (fixed pane above)
+  - lower sash split by a meeting rail at X ±0.06, with an extra sash bottom rail at -0.7..-0.5
+- Screen on the center lower sash only. Projects to roughly x 268–372, y 103–254.
+
+Objects (ft):
+- Heater: X ±3.45, Y -3.6..-2.25, Z 14.58..15. Louver strip in the bottom 0.35 ft. Section joint at X -1.2.
+- Desk: WALNUT, X ±3.45, Z 12.5..14.5. Top at Y -1.1 (0.12 thick), apron to -1.5. Right pedestal X 1.9..3.45 with 2 drawers. Desk items run left to right in the close-up's order: lava lamps glow, the laptop sits at center, snake plant at X 3.0. Succulents, books and a candle sit on the stool.
+- Chair: ladder-back with 4 curved slats, WALNUT, at (0.3, -3.6, 11.7). Seat 1.4 ft square at Y -2.1; back top at Y -0.2, so it cuts into the lower sash.
+- Bunk: X -6.5..-3.5, Z 8.0..14.9.
+  - posts 0.3 ft square to Y 3.2, with a 1px column of holes
+  - lower rail -2.85..-2.35, mattress -2.35..-1.85, holding a navy blanket with a gold stripe and a pillow
+  - upper rail 0.9..1.4, mattress 1.4..1.9
+  - guard boards 2.25..2.55 and 2.8..3.1
+  - ladder rails at Z 9.4 and 10.6, hooked at Y 3.1, foot at X -2.7, flat rungs every 1 ft
+  - books and a pothos on the upper deck, trailing to Y 0.2
+  - bib and medal on the foot post, Y 1.6..2.6
+- Right wall:
+  - Oak door Z 5.9..8.9, Y -3.6..3.4. Four raised panels (2 tall over 2 short), lock rail at Y -0.6..-0.2, 0.4 ft casing.
+  - Transom bar 3.4..3.8; frosted transom 3.8..5.4 glowing TRANSOM[2–3].
+  - Brass knob at (Z 8.4, Y -0.6); deadbolt at Y -0.1.
+  - Dresser X 4.9..6.5, Z 9.8..12.4, top at -1.1, 3 drawers with finger grips. Open hutch X 5.6..6.5 up to Y 2.9, shelves at 0.2 and 1.5 with books, a pothos on top.
+- Plants:
+  - fiddle-leaf fig in a cream pot at (5.3, -3.6, 14.0), up to Y 3.6
+  - monstera in a navy pot at (-4.4, -3.6, 7.2), cropped at lower left
+  - two pothos hung on picture-rail hooks at X ±4.0, pots at Y 4.4, Z 14.6, trailing to Y 1.2
+  - one pothos on a tension rod (Y 7.6, Z 15.4, pot at X -0.8), silhouetted against the transom with a 1px TREE_GRN[4] rim
+- Wall items:
+  - Atlanta print on the back wall, X -6.2..-4.6, Y 4.6..6.0, hung on wires
+  - pennant at X 4.5..6.3, Y 6.0..6.9
+  - Haitian flag on the left wall at Z 10.4..12.8, Y 3.7..5.3
+- String lights along the picture rail on all three walls: bulbs every 0.7 ft, a 0.25 ft swag between hooks set every 2.5 ft.
+- Ceiling fixtures: flush dome (diameter 1.2 ft) at X 0, Z 12.8, CEIL dome with a '#756e64' ring. Smoke detector (diameter 0.45) at (1.4, 13.9).
+
+Delete: plank walls, beamed ceiling, plank floor, the Gothic windows (WINS, leftWin, WFILL), curtains and gold rods, pendants (PEND), Windsor chair, freestanding bookshelf, old rug size. Leave out the sink; it is in the study room, not the bedroom.
+
+3. DESK CLOSE-UP (640x360; desk top y 242–286, x 6–634)
+Backdrop:
+- Wall strips x 0–72 and 568–640: PLASTER step 3, dithering to step 2 at the edges.
+- Oak casing x 72–88 and 552–568, for y 0–222. Inner edge 1px OAK_HI[2], outer edge OAK[0].
+- Reveals: x 88–96 is PLASTER[1]; x 544–552 is PLASTER[5] (sunlit).
+- BRONZE frame:
+  - outer stiles x 96–106 and 534–544
+  - left sidelight glass x 106–178
+  - mullion x 178–190
+  - center glass x 190–450, meeting rail x 316–324
+  - mullion x 450–462
+  - right sidelight x 462–534
+  - bottom frame y 208–218; center sash bottom rail y 200–208
+  - glass from y 0 down to 208 in the sidelights and 200 in the center; the transom is off-frame
+  - 1px screen spline at y 92, center panes only
+- Oak stool: top face y 218–226 at x 64–576, nosing y 226–229, shadow y 229–231. Wall y 231–242 runs PLASTER[1] down to [0].
+
+Desk:
+- WALNUT replaces the planks. Top is base WALNUT[3] with a WALNUT[1] back-edge line. Straight 1px WALNUT[2] streaks 6–40 px long; no seams or knots.
+- Sun areas use WALNUT_SUN, crossed by diagonal mullion shadow bands that slope down-right (dx/dy about +0.9). The center panes transmit ×0.82.
+- Front edge y 286–289: WALNUT[4] top, WALNUT[2] face.
+- Right pedestal x 452–634: 2 drawers with BRASS pulls.
+- Knee space x 40–452 shows the HEATER (y 296–338, louvers in the bottom 8 px), then glossy tile y 338–360 with a navy/gold rug edge. The dumbbell stays.
+
+Objects: the shelf goes, and its books and candle stand on the stool with succulents.
+- Left strip: Atlanta print x 8–64, y 34–64; bib x 14–46, y 82–112; medal at (56,128).
+- Right strip: pennant x 572–636, y 40–58; pothos on a cord from x 604, pot at y 84–98, vines to y 190.
+- Fairy lights run down both casings.
+- Everything else, including the laptop at x 245–393 and the lava lamps in front of the left sidelight, keeps its current spot. No logos.
+
+4. THE VIEW
+Paint one function with a scale parameter and use it for both shots. Positions are given for the close-up glass (y 0–208); the wide shot uses the same fractions.
+- Sky y 0–96 as a SKY gradient with 2 cumulus. The sun is off-frame upper left: brighten the top-left of the left sidelight and bloom 2 px over the frame. Horizon at y 98.
+- Main Building with the Golden Dome at x 250: cross at y 18, dome y 44–70, drum to 86, BRICK_ND facade below. Reuse mainBuilding().
+- Basilica spire at x 400: gold cross at y 4, SLATE spire 10–72, brick tower to 118 with round-arched openings; nave roof to the right.
+- Trees y 36–140, about 45% green (TREE_GRN), 25% orange, 15% red, 15% gold:
+  - green oak at x 110
+  - gold maple at x 196
+  - low red maple at x 300, leaving the Dome clear above it
+  - orange maple at x 360
+  - SPRUCE at x 430–452, top y 30 (it covers the spire's base, not the tip)
+  - big orange maple at x 500
+  - green at x 530
+  - Haze all foliage 20% toward SKY[3].
+- Lawn y 118–160: LAWN with shadow pools.
+  - PATH diagonals (150,160)→(330,118) and (480,160)→(260,118), plus a far path along the horizon.
+  - At the junction near (300,138): a bronze statue on a limestone pedestal. Lamppost with a white globe at x 420.
+  - 1px leaf litter under the trees.
+- Parapet: cap y 160–166 (LIME[4], 1px LIME[3] arris), inner face y 166–184 in LIME[2]/[1], joints every 60 px.
+- Pavers y 184–208 in PAVER: 2 rows converging slightly toward x 320, a parapet shadow band at y 184–190.
+- Screened panes: multiply ×0.82, desaturate 18%, lift darks to SCREEN[1], plus a 25% checker. Sidelights and transom stay clean.
+- In the wide shot the bottom 20% (pavers, parapet) sits behind the stool and desk items.
+
+5. RENDERING TIPS
+1. Oak: 1px wavy vertical streaks of OAK[2] on OAK[3], with nested U/V arches every 30–60 px on panels; rail grain runs horizontal. Keep grain within 1.5 steps. Put 1px OAK_HI[2] on rail tops and 1px OAK[0] under the cap and panel heads. Never outline.
+2. Keep walnut redder, darker and duller than oak. Posts stay plain. In sun it jumps to WALNUT_SUN orange; that warm-sun against cool-shade contrast is the room's signature.
+3. Tile reflections are smeared mirror images with a Fresnel ramp, broken at seams. The window glare streak is cool, sun patches have white cores, and furniture legs make short blurry smears.
+4. Navy is flat paint with no texture. Use 4x4 Bayer only where it changes step, and NAVY_SUN where sun hits it.
+5. Plaster and ceiling are smooth. Dither bands at least 6 px wide, add 0.5 ft of corner occlusion, keep the ceiling whiter than the walls, and use '#b4b3aa' for shaded planes that face the window.
+6. The window panes are the brightest pixels in frame. Bloom eats 1px into the bronze, frame faces that look up at the sky take '#3e5670', and the view stays low-contrast. Never draw the screen as a grid.
+7. Every sunlit edge gets a 1px hot rim. Mullion bars show inside every sun patch. Keep the near corners dark so the eye goes to the window.
+8. Brass is a dark-mid body with a 1–2 px BRASS[5] arc. The transom glows celadon. The picture rail is a 1px dark line plus a 1px light ledge. String lights are a 1px bulb with a 40% halo.

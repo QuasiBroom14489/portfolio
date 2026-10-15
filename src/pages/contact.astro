@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+const rows = [site.links.email, site.links.linkedin, site.links.github, site.links.resume];
+---
+<Base title="Contact" app="Contact">
+  <main id="main" class="page narrow">
+    <article class="win ct" aria-labelledby="ct-t">
+      <div class="bar"><Icon name="contact" accent="#2c4a90" size={22} /><h1 id="ct-t" class="t">Contact</h1><a class="x" href="/" data-close aria-label="Close">×</a></div>
+      <div class="body">
+        <p class="lead">I’m looking for a <b>Summer 2027</b> internship in data, analytics or AI engineering. Email is the fastest way to reach me.</p>
+        <dl>
+          {rows.map(r => <><dt>{r.label}</dt><dd><a href={r.href} target={r.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener">{r.label === 'Résumé' ? 'Download the PDF' : r.handle}</a></dd></>)}
+        </dl>
+      </div>
+    </article>
+  </main>
+</Base>

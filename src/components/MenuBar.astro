@@ -1,0 +1,53 @@
+---
+import { site } from '../data/site';
+interface Props { app: string }
+const { app } = Astro.props;
+---
+<header class="menubar">
+  <nav aria-label="Main">
+    <details class="zj">
+      <summary aria-label="Site menu"><span class="mono">ZJ</span></summary>
+      <ul>
+        <li><a href="/about">About Zane</a></li>
+        <li><a href={site.links.resume.href}>Résumé (PDF)</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/list">List view</a></li>
+        <li><a href="/#main">Back to the desktop</a></li><li><a href="/#intro">Back to the room</a></li>
+      </ul>
+    </details>
+    <a class="who" href="/">{site.name}</a>
+    <span class="app" aria-hidden="true">{app}</span>
+    <a href="/#projects">Projects</a>
+    <a href="/skills">Skills</a>
+    <a href={site.links.resume.href}>Résumé</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="right">
+    <span class="pill">{site.availability}</span>
+    <a class="listv" href="/list">List view</a>
+    <span class="clock" aria-hidden="true">3:41 PM</span>
+  </div>
+</header>
+<style>
+  .menubar { position: fixed; inset: 0 0 auto; z-index: 50; height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 10px; background: rgba(27, 20, 16, .94); color: var(--cream); border-bottom: 2px solid #000; font: 600 .86rem/1 var(--body); }
+  nav, .right { display: flex; align-items: center; gap: 4px; min-width: 0; }
+  a { color: var(--cream); text-decoration: none; padding: 6px 8px; white-space: nowrap; }
+  a:hover, summary:hover { background: var(--navy-2); color: var(--gold-2); }
+  .who { font-weight: 700; }
+  .app { display: none; }
+  .zj { position: relative; }
+  summary { list-style: none; cursor: pointer; padding: 4px 6px; }
+  summary::-webkit-details-marker { display: none; }
+  .mono { font: 400 .78rem/1 var(--pixel); background: var(--gold); color: var(--ink); padding: 3px 4px 4px; border: 2px solid #000; }
+  .zj ul { position: absolute; top: 30px; left: 0; list-style: none; margin: 0; padding: 6px; min-width: 210px; background: var(--paper); border: 2px solid var(--edge); box-shadow: var(--shadow); }
+  .zj ul a { display: block; color: var(--ink); padding: 8px 10px; }
+  .zj ul a:hover { background: var(--navy-2); color: var(--gold-2); }
+  .pill { font: 400 .62rem/1.2 var(--pixel); background: var(--gold); color: var(--ink); padding: 5px 8px 6px; border: 2px solid #000; white-space: nowrap; }
+  .clock { font: 400 .7rem/1 var(--pixel); color: var(--muted); padding-left: 6px; white-space: nowrap; }
+  @media (max-width: 1100px) { .clock, .listv { display: none; } }
+  @media (max-width: 860px) {
+    nav > a:not(.who) { display: none; }
+    .pill { font-size: .55rem; }
+  }
+  @media (max-width: 520px) { .pill { display: none; } .right::after { content: 'Open to Summer 2027'; font: 400 .58rem/1.2 var(--pixel); background: var(--gold); color: var(--ink); padding: 5px 6px; border: 2px solid #000; } }
+</style>

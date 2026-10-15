@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { capabilities } from '../data/capabilities';
+
+const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const cols = all.filter(p => capabilities.some(c => c.proof.some(pr => pr.project === p.id)));
+---
+<Base title="Skills" description="Capabilities, each backed by a specific project and number." app="Skills">
+  <main id="main" class="page">
+    <article class="win sk" aria-labelledby="sk-t">
+      <div class="bar"><Icon name="skills" accent="#52648a" size={22} /><h1 id="sk-t" class="t">Skills — every claim backed by a project</h1><a class="x" href="/" data-close aria-label="Close">×</a></div>
+      <div class="body">
+        <p class="lead">Rows are capabilities, columns are projects. Each filled cell links to the proof.</p>
+        <div class="scroll">
+          <table class="matrix">
+            <thead><tr><th scope="col">Capability</th>{cols.map(p => <th scope="col"><a href={`/projects/${p.id}`}><Icon name={p.data.icon} accent={p.data.accent} size={20} /><span>{p.data.title}</span></a></th>)}</tr></thead>
+            <tbody>
+              {capabilities.map(c => (
+                <tr>
+                  <th scope="row"><a href={`#${c.key}`}>{c.label}</a></th>
+                  {cols.map(p => {
+                    const hit = c.proof.find(pr => pr.project === p.id);
+                    return <td>{hit ? <a href={`/projects/${p.id}`} title={hit.text} aria-label={`${c.label}: ${p.data.title} — ${hit.text}`}>■</a> : <span aria-hidden="true">·</span>}</td>;
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {capabilities.map(c => (
+          <section id={c.key} class="cap">
+            <h2>{c.label}</h2>
+            <p class="blurb">{c.blurb}</p>
+            <ul>{c.proof.map(pr => { const p = all.find(x => x.id === pr.project); return p && <li><a href={`/projects/${p.id}`}><b>{p.data.title}</b></a> — {pr.text}</li>; })}</ul>
+          </section>
+        ))}
+      </div>
+    </article>
+  </main>
+</Base>

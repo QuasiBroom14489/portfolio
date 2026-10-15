@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { site, experience, education } from '../data/site';
+---
+<Base title="About" app="About">
+  <main id="main" class="page">
+    <article class="win ab" aria-labelledby="ab-t">
+      <div class="bar"><Icon name="about" accent="#ebbd2a" size={22} /><h1 id="ab-t" class="t">About — {site.name}</h1><a class="x" href="/" data-close aria-label="Close">×</a></div>
+      <div class="body">
+        <p class="head">{site.headline}</p>
+        <p>{site.summary}</p>
+        <p class="actions">
+          <a class="btn gold" href={site.links.resume.href} target="_blank" rel="noopener">Résumé PDF</a>
+          <a class="btn" href={site.links.github.href} target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" href={site.links.linkedin.href} target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn plain" href={site.links.email.href}>{site.links.email.handle}</a>
+        </p>
+        <h2 class="eyebrow">Experience</h2>
+        {experience.map(e => (
+          <section class="job">
+            <h3>{e.role} — {e.project ? <a href={`/projects/${e.project}`}>{e.org}</a> : e.org}</h3>
+            <p class="when">{e.when} · {e.where}</p>
+            <ul>{e.points.map(pt => <li>{pt}</li>)}</ul>
+          </section>
+        ))}
+        <h2 class="eyebrow">Education</h2>
+        <section class="job">
+          <h3>{education.school} — {education.degree}</h3>
+          <p class="when">{education.when}</p>
+          <p>Coursework: {education.coursework.join(' · ')}</p>
+          <p>Languages: {education.languages}</p>
+        </section>
+      </div>
+    </article>
+  </main>
+</Base>

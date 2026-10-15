@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+const pdf = site.links.resume.href;
+---
+<Base title="Résumé" app="Résumé">
+  <main id="main" class="page">
+    <article class="win rs" aria-labelledby="rs-t">
+      <div class="bar"><Icon name="resume" accent="#c99a62" size={22} /><h1 id="rs-t" class="t">Résumé — {site.name}</h1><a class="x" href="/" data-close aria-label="Close">×</a></div>
+      <div class="body">
+        <p class="actions"><a class="btn gold" href={pdf} download>Download PDF</a> <a class="btn plain" href={pdf} target="_blank" rel="noopener">Open in a new tab ↗</a></p>
+        <object class="pdf" data={pdf} type="application/pdf" aria-label="Résumé PDF">
+          <p>Your browser can’t show the PDF here. <a href={pdf}>Download it instead.</a></p>
+        </object>
+      </div>
+    </article>
+  </main>
+</Base>

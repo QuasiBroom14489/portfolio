@@ -1,0 +1,41 @@
+---
+import '@fontsource/silkscreen/400.css';
+import '@fontsource/figtree/400.css';
+import '@fontsource/figtree/600.css';
+import '@fontsource/figtree/700.css';
+import '../styles/global.css';
+import '../styles/windows.css';
+import MenuBar from '../components/MenuBar.astro';
+import { site } from '../data/site';
+interface Props { title?: string; description?: string; app?: string }
+const { title, description = `${site.name} — ${site.headline} ${site.school}.`, app = 'Desktop' } = Astro.props;
+const full = title ? `${title} · ${site.name}` : `${site.name} — AI systems & data`;
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{full}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content={full} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta name="theme-color" content="#14234f" />
+  <script is:inline>
+    (function (d) {
+      d.classList.add('js');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('skip-intro');
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <MenuBar app={app} />
+  <slot />
+</body>
+</html>

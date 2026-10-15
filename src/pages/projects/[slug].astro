@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ProjectWindow from '../../components/ProjectWindow.astro';
+
+export async function getStaticPaths() {
+  const all = await getCollection('projects');
+  return all.map(project => ({ params: { slug: project.id }, props: { project } }));
+}
+const { project } = Astro.props;
+---
+<Base title={`${project.data.title} — ${project.data.role}`} description={project.data.oneLiner} app={project.data.title}>
+  <main id="main" class="page">
+    <ProjectWindow project={project} />
+    <p class="back"><a class="btn plain" href="/#main">← Back to the desktop</a> <a class="btn plain" href="/list">All projects</a></p>
+  </main>
+</Base>
+<style>.back { margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }</style>

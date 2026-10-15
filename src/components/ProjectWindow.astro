@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+import { capabilities } from '../data/capabilities';
+import { inline, statusClass } from '../lib/inline';
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const p = project.data;
+const caps = capabilities.filter(c => p.capabilities.includes(c.key));
+const tid = `w-${project.id}`;
+---
+<article class="win pw" data-project={project.id} aria-labelledby={tid} style={`--accent:${p.accent}`}>
+  <div class="bar">
+    <Icon name={p.icon} accent={p.accent} size={22} />
+    <h1 id={tid} class="t">{p.title} — {p.role}</h1>
+    <span class={`tag ${statusClass[p.status] ?? ''}`}>{p.status}</span>
+    <a class="x" href="/" data-close aria-label={`Close ${p.title}`}>×</a>
+  </div>
+  <div class="body">
+    <p class="one">{p.oneLiner}</p>
+    <div class="hero">
+      <div class="big">{p.hero.value}</div>
+      <div class="lbl">{p.hero.label}</div>
+    </div>
+    {p.stats.length > 0 && (
+      <ul class="stats">{p.stats.map(s => <li><b>{s.value}</b><span>{s.label}</span></li>)}</ul>
+    )}
+    {p.links.length > 0 && (
+      <p class="cta">{p.links.map(l => <a class="btn gold" href={l.href} rel="noopener" target="_blank">{l.label} ↗</a>)}</p>
+    )}
+
+    <section><h2 class="eyebrow">The problem</h2><p>{p.problem}</p></section>
+    <section>
+      <h2 class="eyebrow">What I built</h2>
+      <ul class="built">{p.built.map(b => <li set:html={inline(b)} />)}</ul>
+    </section>
+    {p.how.length > 0 && (
+      <section>
+        <h2 class="eyebrow">How it works</h2>
+        <ol class="flow">{p.how.map(s => <li>{s}</li>)}</ol>
+      </section>
+    )}
+    <section class="two">
+      <div><h2 class="eyebrow">Stack</h2><ul class="chips">{p.stack.map(s => <li>{s}</li>)}</ul></div>
+      {caps.length > 0 && <div><h2 class="eyebrow">Shows</h2><ul class="chips caps">{caps.map(c => <li><a href={`/skills#${c.key}`}>{c.label} →</a></li>)}</ul></div>}
+    </section>
+    {p.proof.length > 0 && (
+      <section>
+        <h2 class="eyebrow">Proof</h2>
+        <table class="proof">
+          <tbody>{p.proof.map(r => <tr><th scope="row">{r.metric}</th><td>{r.value}<small>{r.source}</small></td></tr>)}</tbody>
+        </table>
+      </section>
+    )}
+    {p.next && <section><h2 class="eyebrow">What I'd do next</h2><p>{p.next}</p></section>}
+    <p class="vis">{p.dates} · {p.visibility}</p>
+  </div>
+</article>

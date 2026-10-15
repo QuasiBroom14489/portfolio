@@ -1,0 +1,26 @@
+# deps / builds
+node_modules/
+dist/
+.astro/
+.vercel/
+
+# env + secrets
+.env
+.env.*
+!.env.example
+
+# Blender
+*.blend1
+*.blend@
+scene/build/*.glb
+scene/build/renders/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Private planning notes (kept local; full history on the local private-history branch)
+PLAN.md
+notes/
+.claude/

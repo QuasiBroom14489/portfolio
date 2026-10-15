@@ -1,0 +1,67 @@
+ST. EDWARD'S HALL: ARCHITECTURE AND MATERIALS SURVEY (from IMG_6036, all 51 frames at 1 fps plus f01–f15)
+
+Measurements are estimates. Doors are taken as 7'-0". The phone was tilted and moving, so allow ±10%. Hex values were sampled from the video under warm indoor light, then corrected toward the true color.
+
+KEY FINDING: IT IS A TWO-ROOM SUITE
+- Front/study room (s31–s37): the entry door, a sink vanity and two desks with hutches on either side of one tall, narrow window with a roller shade.
+- An oak-cased opening with no door, just curtains (s38: one navy-black panel, one white panel with a navy hem band), leads to the bedroom (s39–s51). The bedroom has a bunk-style bed, a desk and a wider window looking onto the quad.
+
+ROOM SHAPE AND PROPORTIONS
+- Ceiling: about 12'-0" (11.5–12.5'), roughly 1.7× door height. The ceiling and walls meet at a plain square corner with no crown.
+- Picture rail: about 1.5" stained mid-brown wood strip at about 10'-3", 18–20" below the ceiling. It runs around both rooms and lines up with the window heads.
+- Footprint impression: each room is about 10–11' wide and 13–15' deep, narrow and tall. The window sits centered on the short end wall, opposite the entry.
+- Study-room window: about 3' wide × 8'-4" tall, sill about 20–24" up, head at the picture rail. It has a cream roller shade (#d8ccb4), usually two-thirds down.
+- Bedroom window (s41, s46, f12): about 4–4.5' wide, same sill and head. Dark bronze aluminum replacement frame (#20221f), about 2.5" sightlines, set in a deep masonry opening. A fixed transom bar sits about 30% down from the head. The lower section is split by a mullion into a wide pane and a narrow pane. The operable lower sash has a gray insect screen whose cross-bars read as a faint "+" over the view.
+- Under each window is a cream enameled steel convector (#c9b89b, darker in shadow) about 14–16" tall and 5" deep. It is longer than the window, in a short and a long section, with vertical louver slots along the bottom.
+
+TRIM AND DETAIL
+- Room baseboard: about 4" stained wood (#4a3018), flat with an eased top. No chair rail or wainscot inside the rooms.
+- Walls are warm cream (#d8cfbd lit, #958263 in shade). The ceiling is slightly cooler white (#dcd8d0).
+- Ceiling: a flush round fixture about 14" across (frosted white dome with a gray metal ring), a round smoke detector about 5" across next to it, and a small sprinkler head.
+- Beige duplex outlets at about 15". A stainless grab bar by the sink.
+- Hallway wainscot: red oak about 38" tall, set at the door's lock-rail height. Frame-and-panel with tall flat panels, a small cap molding, and a dark base about 6" tall. In shadow it reads deep amber (#5a3008).
+- Hallway walls: slate navy (#2f3a50 base, #3d4a63 lit, #232b3d shadow).
+- Room door: red oak with strong cathedral grain, honey-amber (#a45f09 lit, #8a541c mid, #5a3008 shadow). It has 4 raised panels (2 tall over 2 short, mid-rail at about 36"). Flat casing about 5" with a backband. A frosted pebbled-glass transom about 20" tall (#c9bfa9) sits above an oak transom bar about 5". Antique brass round knob with a separate brass deadbolt about 6" above it, and a nameplate card beside the door.
+- Lounge door: half-glass, two tall glass panes over two raised panels.
+
+BUILT-INS AND FURNITURE (dark walnut-to-cherry laminate)
+- Bed: two stacked twins. Posts about 3" square (#472f1b) with a column of adjustment holes and pins. Side rails are about 6" boards. Lower deck about 14" off the floor, upper deck about 5'-0", upper guard rail made of 2 boards at about 6'-6". A separate wood ladder (2 rails, flat rungs) leans at about 75° and hooks onto the upper rail.
+- Mattresses: navy vinyl, about 6" thick (#3b5684, highlight #6f86ad).
+- Desks: about 30" tall and 42" wide, top grain cherry-red (#634b46 shade, #ba735b sun). Each has an open hutch (two sides, one shelf, back panel) reaching about 5'-0", and a 3-drawer pedestal.
+- Chairs: wood with 4 curved horizontal back slats.
+- Closet: a curtain-fronted alcove with deep white shelves at about 6' and 7'-6". Inside are two 3-drawer dressers (#381d0a), each about 30" tall and 24" wide, with no visible pulls (finger grips).
+- Sink vanity, near the entry: cream cultured-marble top with an integral oval bowl (#e2d6bc), single chrome faucet, wood laminate box cabinet about 31" tall.
+- Hallway and lounge: a chocolate leather mid-century wing chair (#4f3121) with rounded wings and tapered splayed wood legs. Also cognac leather sectionals, a gray button-tufted sofa, cherry cabinets, sepia portraits in gold frames with navy mats, and a large mural of a snowy founding scene in a frame lettered "NOTRE DAME".
+
+FLOORING
+- Rooms: 12"×12" vinyl tile, cool off-white (#c1c8c7) with faint speckle. Seams are just visible as slightly darker lines, laid square to the walls.
+- The floor has a high-gloss wax finish. The window shows up as a long, blurry, bright reflection running from the sill toward the viewer. The sun patch is a sharp-edged parallelogram of near-white (#efefef). Under the furniture the floor drops to warm gray (#93877c).
+- Hallway carpet: gray-taupe loop pile with fine horizontal texture.
+- Lounge carpet: lighter greige (#b4a282), speckled, no bold pattern.
+
+VIEW FROM THE BEDROOM WINDOW (2nd floor)
+- In front, about 1–2' below the room floor: a flat porch roof of gray square pavers about 2' each (#807e80), about 6–8' deep. It ends at a low stone parapet about 2'-6" high, with a buff sandstone face (#917b68) and a pale limestone cap (#d4c6b6).
+- The quad is about 15–18' below. Bright lawn (#a8c070, washed out in sun) is cut by pale concrete paths into wedge- and diamond-shaped beds, with a diagonal path crossing at center.
+- On the quad: a dark bronze statue on a pedestal, a lamppost with a white globe, low shrubs, big rounded deciduous trees (oak/maple), and a tall spruce right of center.
+- Background: a cream-brick building (#c9bf9a) with a slate roof (#6a7479) and a slender pointed steeple. This is the natural place for the Dome or Basilica.
+- Right edge (s49): a nearby 4-storey cream-brick building with paired round-arched windows, a slate mansard roof and a chimney.
+- Sky: pale blue (#c8dcea) with cumulus clouds. The trees were still green in the video, so the fall colors will need to be added.
+
+THE ST. ED'S FEEL (preserve these)
+1. Tall, narrow volumes. A 12' ceiling over 10–11' wide rooms, a picture rail high on the wall, and a big plain band of cream wall above it.
+2. One very tall window per room on the end wall, pouring light onto a glossy pale floor and making a long mirror smear plus a sharp sun patch.
+3. Victorian hall against plain dorm room: navy walls, honey red-oak wainscot, 4-panel doors with frosted transoms and brass in the hall; cream walls, cream tile and dark walnut built-ins in the room.
+4. Warm wood everywhere at three levels: amber oak (doors and trim), red-brown cherry (desks), dark walnut (bed and dressers). The one cool accent is navy (mattresses, walls, curtains).
+5. Outside: a stone porch parapet, then a manicured quad with crossing paths, mature trees and spruce, cream-brick buildings with slate roofs, and a spire. The view is from a raised 2nd floor, looking slightly down.
+
+Frames that show each feature best:
+- Study-room window wall: s32, s33
+- Bedroom window and bed: f12, s41, s46, s47
+- View: f14, s48, s49
+- Door and transom: f02, s15
+- Closet: s37
+- Ceiling: f13
+- Bed: s40
+- Sink: f10
+
+All frames and sample crops are in /private/tmp/claude-501/-Users-zanejohnson/9b3a7547-f28f-4e36-ad93-6908f04a6517/scratchpad/room-frames/. The 6-up contact sheets are in sheets/a0–a8.jpg.

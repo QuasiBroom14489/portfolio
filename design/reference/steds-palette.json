@@ -1,0 +1,332 @@
+{
+ "materials": [
+  {
+   "name": "Hallway navy wall paint",
+   "ramp": [
+    "#1e2430",
+    "#2b3343",
+    "#3a4457",
+    "#4c566a",
+    "#626b7c",
+    "#7c8089"
+   ],
+   "measured": "raw median \u2192 normalized: s16 [480,60,200x260] #3d3f48 \u2192 #464c5b; s16 shaded [20,20,100x230] #2d313b \u2192 #343c4b; s06 [40,100,230x600] #64686d \u2192 #677080 (q10 #4c5564, q90 #9397a4); s15 [360,120,120x300] #626065 \u2192 #727885; s09 [300,100,380x280] #515358 \u2192 #595e70; s05 daylight-lit wall between the windows [420,300,25x120] #404c5e \u2192 #4a5c73; s05 under AC [470,270,90x30] #2f3946 \u2192 #374657. OKLCH hue about 264\u00b0, chroma only 0.03\u20130.035.",
+   "notes": "This is a muted gray-navy paint (Hale-Navy-like), flat or eggshell, with no texture, not a saturated navy. Under the warm hall lamps the camera records it as almost neutral gray (#626065 raw in s15). It only reads as navy next to the orange oak, and pixel art gets that same contrast for free. If it reads too gray at 640x360, push only the base to about #34425e and keep the top step desaturated. Bulk of wall = steps 3\u20134; corners and under the cornice = step 2; lamp-lit patches near doors = steps 5\u20136. White ceiling and a wide white cornice above it, oak wainscot below."
+  },
+  {
+   "name": "Honey-oak wainscot and doors",
+   "ramp": [
+    "#3a1b05",
+    "#552c0a",
+    "#6f3d12",
+    "#8c561d",
+    "#a8702e",
+    "#c99a62"
+   ],
+   "measured": "Door close-ups where the shipping label reads neutral (#dadbd7): f07 panel [560,350,300x300] med #925b21, q5 grain #764717; f07 cathedral figure [200,500,40x200] q5 #6e3914; f07 shadow stile [20,50,120x600] med #592d06, q5 #431f02; f07 wainscot in shade [700,1150,250x120] #4a2d16; s23 panel [380,200,160x260] #8e581d; s27 panel [240,150,200x400] #89561e (q95 #97652d \u2192 #9c662c); lamp-lit door s06 [440,420,90x380] #a56007 \u2192 #aa680a; wainscot s06 [30,870,270x230] #59320b \u2192 #5c360f and s16 #502302 \u2192 #5b2b03. Hue goes from 53\u00b0 in shadow to 70\u00b0 in highlights.",
+   "notes": "Roles: shadow #552c0a (deep #3a1b05 for panel gaps and the undercut of the wainscot cap); base #8c561d; grain dark #6e3914 on base steps and #4a2508 on shadow steps; highlight #c99a62; specular glint #ecc08a. Red-oak cathedral figure: 1px wavy vertical streaks plus occasional nested U/V arches in grain-dark. Keep the contrast low (about 1\u20131.5 steps) and don't over-ink. Satin varnish gives soft lengthwise specular streaks. The wainscot sits about one step darker than the doors (base #6f3d12). Doors are 4-panel (2 tall upper, 2 short lower) with an oak-framed transom above, wide flat casings, and a molded cap rail on the wainscot."
+  },
+  {
+   "name": "Oak door raised-panel / rail highlight",
+   "ramp": [
+    "#8c6841",
+    "#a87d4c",
+    "#c7955e",
+    "#ddb07a",
+    "#eec58f"
+   ],
+   "measured": "f07 lock-rail bevel [380,950,320x22] med #c6955e, q95 #e8bb83; f07 rail face [400,990,300x80] #8b6841; s27 rail bevel [170,640,260x25] med #bf925a, q95 #eac195 \u2192 #f1c391; s23 bevel [250,712,280x22] q95 #e7ba85; s28 rail top edge [220,505,320x30] med #d0a372.",
+   "notes": "The top edges of rails and raised-panel bevels catch light and go paler and yellower, with less chroma than the oak base. This 1px light line is what makes the raised panels read. Use #c7955e for bevel lines and #eec58f only for 1\u20133px glints near a light. The flat horizontal rail face sits at #8c6841, a bit desaturated by the satin sheen."
+  },
+  {
+   "name": "Brass knob and deadbolt",
+   "ramp": [
+    "#3a2712",
+    "#5a4322",
+    "#7f653b",
+    "#a68a55",
+    "#d0b172",
+    "#ecd08f"
+   ],
+   "measured": "s23 deadbolt rim [100,565,100x30] q5 #4c3418 / med #94794c / q95 #e5c77c; f07 deadbolt rim [100,750,150x40] q95 #e4c67f, cylinder face [130,790,110x50] med #6b5431; s28 knob [95,440,100x120] q10 #543c1f / med #906a45 / q95 #e0c48e; s27 knob [0,505,70x60] q95 #e0c386.",
+   "notes": "Aged satin brass, not bright gold. The body stays in the dark-mid steps (#5a4322\u2013#7f653b), with a sharp 1\u20132px specular arc of #ecd08f on the shoulder of the knob and the rim of the round deadbolt rose. The keyway face sits darker at #5a4322. Each room door has a round deadbolt above the knob."
+  },
+  {
+   "name": "Beige speckled lounge carpet",
+   "ramp": [
+    "#8a7c66",
+    "#a8997f",
+    "#c2b398",
+    "#d2c4aa",
+    "#e2d6be"
+   ],
+   "measured": "s05 [400,1000,200x150] raw #b6a28a \u2192 #d0c1a8 (normalized q5 #beb398, q95 #dccdb4); s16 [40,650,220x300] #bfa987 \u2192 #d6c8a8 (q90 #e4d5b5); s14 [420,1080,150x100] raw #c1b190; s09 in shade [450,1000,200x150] #847354 \u2192 #91826b. Individual speckles can't be resolved (motion blur plus compression). Speckle tones come from the local q5/q95 spread, about \u00b18% lightness.",
+   "notes": "Base #d2c4aa where lit, #c2b398 in general light. Speckles are sparse 1px flecks of #9c8d74 (dark) and #ebe1cc (light) at about 10\u201315% density, scattered and never in lines, for a cut-pile speckled look. Shadow under furniture #a8997f; contact shadow #8a7c66. The corridor right outside his door has a different carpet (see the corridor carpet entry)."
+  },
+  {
+   "name": "Off-white room wall paint",
+   "ramp": [
+    "#8a7f6e",
+    "#a89b85",
+    "#c2b69f",
+    "#d6cbb6",
+    "#e5dcc9",
+    "#f5ebd6"
+   ],
+   "measured": "s43 lit back wall [300,200,380x330] #bfb39f \u2192 #ded3be (anchor); s43 shaded side wall [20,160,150x260] #9a8a70 \u2192 #b4a387; s37 [100,590,550x180] #9f9a91 \u2192 #d5cdbe; s37 upper, in shade [100,320,550x150] #928a79 \u2192 #c4b89f; s45 shaded corner [420,610,200x50] #898172 \u2192 #8f8777; s40 lit [400,170,250x330] raw med #d4c4af; s41 sky-lit wall [600,250,100x250] #b4bebe \u2192 #d0d1c9 (cool); f13 wall #cdbca6 vs ceiling #cabfae (the wall is the creamier of the two).",
+   "notes": "Warm cream off-white, flat, on smooth plaster. Lit #e5dcc9; direct sun or light-beam landings #f5ebd6; general #d6cbb6; shadow #c2b69f, then #a89b85; corner and under-loft occlusion #8a7f6e. Walls that face the window but are out of the sun pick up skylight and go slightly cool, so use #b4b3aa as their shadow to separate them from the warm floor bounce. A picture rail runs about 2 ft below the ceiling (see the trim entry). It is the main height cue."
+  },
+  {
+   "name": "White ceiling",
+   "ramp": [
+    "#9e9586",
+    "#b9b0a3",
+    "#cfc7b8",
+    "#dfd9cd",
+    "#ebe7df"
+   ],
+   "measured": "s45 [300,150,350x250] raw #d9d6d0 \u2192 #e2dfd8 (the unlit fixture reads neutral #a6a6a0 in this frame); s44 [150,100,450x300] #c4b8a7 \u2192 #dcd3c3; f13 [300,300,300x300] raw #cabfae; s43 [250,20,450x100] #b2a287 \u2192 #cfbfa2 (warm bounce); corners: s44 [280,500,150x60] #a89984 \u2192 #bdaf9b, s45 near wall [200,420,300x100] #b2a99d \u2192 #b9b0a3.",
+   "notes": "Whiter and lower in chroma than the walls (C about 0.012\u20130.02 vs about 0.03). Gradient: brightest over the window side, darkening and warming toward the far corners (#cfbfa2, bounce off cream walls and wood) and into the joint with the wall (#b9b0a3). Round flush-mount fixture: frosted dome #c6c1b8 unlit (#e6e3dc on its lit side) with a dark nickel ring #756e64 (f13 [820,80,100x150] / [760,60,25x200]). A small round smoke detector sits nearby."
+  },
+  {
+   "name": "Glossy cream vinyl floor tile",
+   "ramp": [
+    "#8f877e",
+    "#aca59c",
+    "#c3bfb7",
+    "#d0cdc6",
+    "#dedbd3"
+   ],
+   "measured": "s43 [420,960,280x230] #b0aca4 \u2192 #cdcbc4; s35 [100,850,400x350] #b1afaa \u2192 #d1cfcb; s34 [100,1050,150x150] #8f877c \u2192 #cac3be; s41 [30,960,220x180] #b0b9b9 \u2192 #cbccc4; s36 in shade [100,820,500x380] #968a80 \u2192 #aca29b. Seams: a high-pass of the s40 floor shows 1px joints only about 3 levels darker (blurred) at x\u2248145, 279 and 377. Sun patches s41 [215,745,120x40] and s46 [400,1140,200x80] clip at #efefef. Sky/window reflection: s41 [110,830,150x100] #e3eded, s35 [120,615,70x50] #dbe7eb, s40 glare [600,900,110x150] #cfe2e8. Floor shadow under the desk s35 [300,520,200x90] #7a644f \u2192 #907760.",
+   "notes": "Light putty-cream vinyl composition tile (about 12 in squares), glossy, and less yellow than the walls; it reads as cream mostly from warm bounce. Base #d0cdc6; shade #c3bfb7 to #aca59c. Grout/seam #b4b0a8: 1px every tile, about base x0.9, kept subtle and slightly irregular. Sun-reflection highlights: a cool window-glare streak (#dde6e7) stretched toward the viewer below each window, and sun patches of #fbf7ee with #ffffff hot cores and 1\u20132px soft edges. Shadows under wood furniture take warm bounce (#907760). Dark furniture legs reflect as short, blurry vertical smears one step below base."
+  },
+  {
+   "name": "Reddish built-in furniture wood (loft beds, desks, dressers)",
+   "ramp": [
+    "#2a140e",
+    "#43271b",
+    "#5e3b2b",
+    "#7a5241",
+    "#986a55",
+    "#b8876e"
+   ],
+   "measured": "s43 lit drawer fronts [570,800,140x100] #714e3e \u2192 #845d4c; s43 top [580,740,130x40] #6f4d3d \u2192 #825c4a; s43 desk front [30,1030,290x200] #574239 \u2192 #664f46; s43 desktop in shade [230,700,130x280] #442c19 \u2192 #513620 (q5 #300b01); s41 desktop [340,880,300x260] #624844 \u2192 #725049 (grain q5 #5f3c34, q95 #846761); s41 hutch in shade #321f1c \u2192 #3b231e; s41 sunlit hutch [390,600,80x50] q25 #a0624a / med #d28768 / q90 #facd99; s40 lit loft rail [470,670,230x45] #99796f \u2192 #a6867d; s40 ladder #5f453b \u2192 #674d43; s44 loft panel #4b2f1c \u2192 #553722; s46 sunlit chair med #f0c094.",
+   "notes": "Medium walnut/cherry-stain wood and laminate. It is redder, darker and much less saturated than the hallway oak (hue about 45\u00b0 vs 55\u201370\u00b0, chroma about 0.06 vs 0.10). Desk and dresser tops have fine, straight, low-contrast grain (#5f3c34 streaks, one step below base); loft posts and rails are plain. In shade it skews mauve-brown. In direct sun it jumps to orange: low #c9784f, mid #eda577, specular #ffd9a0. That contrast between sunlit orange and cool shadow is the signature of the real room. Covers the loft beds with ladder, desks with hutch, 3-drawer dressers, ladder-back chairs and the room side of the door."
+  },
+  {
+   "name": "Navy mattress (vinyl)",
+   "ramp": [
+    "#1b2030",
+    "#2a3248",
+    "#3c4964",
+    "#52648a",
+    "#6a80a8",
+    "#8aa0c6"
+   ],
+   "measured": "s40 top [470,565,220x60] raw med #647799 (q5 #5a6681, q95 #778fb8) \u2192 normalized #6d84ab; s40 front edge in shade [380,580,60x60] #434859 \u2192 #495064; s40 side in deep shade [20,570,80x120] #1e212f \u2192 #212636; s41 [0,610,70x50] #5a647b; s46 top raw med #5a697a; s40 upper bunk underside #4e4b4d (gray).",
+   "notes": "Vinyl-covered dorm foam mattress in a true medium navy, clearly bluer and more saturated than the hall paint. Slight sheen: the top facing the window is #6a80a8 with a soft #8aa0c6 sheen band; vertical sides #3c4964; under the loft #2a3248; contact shadow #1b2030. Edge seams or piping one step darker. No pattern."
+  },
+  {
+   "name": "Brown leather lounge chair",
+   "ramp": [
+    "#1e110f",
+    "#321e1a",
+    "#4a332c",
+    "#614840",
+    "#7f665b",
+    "#a89083"
+   ],
+   "measured": "s05 seat [470,690,90x60] #4f3a33 \u2192 #5b4740; s05 wing [580,560,60x60] q5 #2a1614 / q75 #5f4d47; s09 back [150,520,200x150] #583a29 \u2192 #614236; s09 seat [60,780,300x200] raw #745e4e; s09 arm in shadow [0,720,80x200] #291808; s09 top roll [40,360,380x120] q75 #917b68, q95 #b7a18b; s09 leg #583d28.",
+   "notes": "Dark chocolate semi-gloss leather with a faint red/aubergine cast. Shadow #321e1a (deep #1e110f in tucks and under the seat); base #4a332c\u2013#614840; highlight #7f665b. The specular (#a89083) is broad and soft on the curved wings, top roll and seat front, not pinpoint. Splayed wood legs use furniture wood #5e3b2b. Mid-century wingback silhouette."
+  },
+  {
+   "name": "Beige baseboard heater (cabinet convector)",
+   "ramp": [
+    "#4f443a",
+    "#6e6153",
+    "#988672",
+    "#bba78f",
+    "#d2c1a7",
+    "#e6d9c2"
+   ],
+   "measured": "s46 face [240,915,340x45] #ac9980 \u2192 #cebba1; s46 grille [300,975,280x35] med #83705f (q10 #584a3d, q90 #ceb89d); s46 end cap [225,960,55x50] #574e44; s41 face [185,618,160x35] #a98975 \u2192 #c3977c (warmed by sun); s35 [0,420,200x70] #b39e8f \u2192 #d3bbab, base shadow #7c6561 \u2192 #937875; s32 [375,975,130x50] #a18a7e.",
+   "notes": "A painted steel cabinet convector, about 16\u201320 in tall, running the full width under the window. Flat top and face in #d2c1a7 / #bba78f. A strip of vertical louver slots along the bottom: alternate #6e6153 slots with #bba78f fins at a 2\u20133px pitch. Segment joints and end caps are 1px #4f443a. A little pinker-beige than the walls. It catches the strongest sun bounce in the room, so its top edge can reach #e6d9c2."
+  },
+  {
+   "name": "Window frame (dark bronze aluminum)",
+   "ramp": [
+    "#0b0b0a",
+    "#1c1b19",
+    "#2d2c29",
+    "#474641",
+    "#67655d"
+   ],
+   "measured": "s49 side frame in shadow [640,650,50x500] med #090908; s49 top face [250,90,150x50] #1b3040 and lower face [300,160,200x40] #192d3a (sky reflection); s48 top [0,0,720x40] #3d5875 (sky reflection); s46 left frame [40,420,30x380] #4c4f4c; s51 frame [0,300,40x600] #4c4f4c; f14 mullion [430,780,20x200] #686557; s49 sunlit screen frame [520,700,40x300] #7d7b64.",
+   "notes": "Dark bronze/black anodized aluminum windows set deep in thick masonry. Each tall unit is a large lower operable sash (two vertical panes, sliding) under a fixed upper transom pane, with an exterior screen. Faces that look up at the sky pick up a cool blue reflection (#3e5670); sides and undersides are near black (#0b0b0a\u2013#1c1b19); add a 1px #67655d edge highlight where sun grazes. Frames are backlit, so they read as silhouettes with bloom eating about 1px into them. Deep cream-painted reveal and stool inside; limestone sill and parapet outside."
+  },
+  {
+   "name": "Window screen mesh tint",
+   "ramp": [
+    "#2e302d",
+    "#3b3e3b",
+    "#5a5c57",
+    "#7e7f77"
+   ],
+   "measured": "s50 sky through screen [120,60,250x150]: mean #acc6cd vs gap pixels q95 #d0e9ef, so transmission is about 0.80\u20130.85. s49 screened sky [150,250,200x200] mean #b7c7d1, q95 #dbe9f2. s51 wires over the dark ledge [420,1080,280x150] q5 #2b2b20 / q95 #4c4e43 (sunlit wires are lighter than the dark background). s51 slider bar #4a524b; aluminum screen frame #7d7b64 / #9c9a82.",
+   "notes": "Fine charcoal fiberglass mesh. Effect on anything seen through it: multiply by about 0.82, lift darks toward #3b3e3b, and desaturate about 15\u201320%. In pixel art, don't draw a 1:1 grid (it causes moir\u00e9). Use a 25\u201335% overlay of #3b3e3b or a sparse checker dither on the lower sash only. Against a dark exterior, sunlit wires flip to the lighter #7e7f77. Only the lower operable sash is screened; the view through the upper transom is clean, brighter and more saturated."
+  },
+  {
+   "name": "Exterior lawn",
+   "ramp": [
+    "#3a4f22",
+    "#556d2c",
+    "#728c35",
+    "#8fa83e",
+    "#adc25a"
+   ],
+   "measured": "Through clean glass, with veiling glare subtracted (darkest conifer pixels used as the veil estimate): f14 [470,910,160x60] raw #a7bd5f \u2192 #95b22c; f14 [200,850,150x30] #bad16c \u2192 #adca48; f14 [20,940,180x40] #9db077 \u2192 #87a25a; s48 [20,745,140x50] #a2b665 \u2192 #8fa938. Through the screen: s51 [420,790,120x60] med #7e8d3e (gap pixels q95 #9ca75f); s49 [0,840,130x60] med #798a54; lawn in tree shade s51 [90,720,200x100] med #55653c.",
+   "notes": "Mowed quad grass in full sun, a fairly yellow green (hue about 120\u2013130\u00b0). Sunlit #8fa83e / #adc25a; tree-shadow pools #556d2c / #3a4f22 (shadows on grass shift cooler). Mowing stripes optional at \u00b1half a step. The footage is late summer. For the fall scene the lawn can stay this green (the quads stay green into November) with scattered leaf litter."
+  },
+  {
+   "name": "Summer tree greens",
+   "ramp": [
+    "#1f2b22",
+    "#2a3a2f",
+    "#4a5f47",
+    "#73885a",
+    "#98ab68"
+   ],
+   "measured": "s51 deciduous crown [460,380,180x200] q5 #24312a / med #445551 / q75 #546766; s50 tree [0,320,70x150] med #536c6f; s50 conifer [230,520,80x120] med #4b5048; f14 de-veiled: conifer [800,620,130x180] #4e524b (q90 #717b72), shrub [670,960,200x50] #536148 (q90 #87926c), deciduous [340,540,100x80] #6b8383 (backlit haze); s48 shrub de-veiled #2e3e26.",
+   "notes": "The 3 core tones are dark #2a3a2f, mid #4a5f47 and light #73885a. Add the deepest crown interior #1f2b22 and sun-struck leaf clusters #98ab68 on the sun side. Foliage in this view is backlit and hazy, so it reads cool and gray-green, much less saturated than the lawn; keep that contrast. Spruces are bluer (#3e504a). The mix is big oaks and maples plus tall spruces and pines. For the fall version, keep this ramp for the conifers and remap the deciduous crowns to ambers and reds; the video has no autumn foliage to measure."
+  },
+  {
+   "name": "Concrete path",
+   "ramp": [
+    "#8f8670",
+    "#b3a685",
+    "#d2c49f",
+    "#e8dcbc",
+    "#f6eddd"
+   ],
+   "measured": "f14 path [330,930,60x25] med #f7efe0 (near clipping); f14 far path [40,828,60x15] #ede2c1 \u2192 de-veiled #eadeb9; s48 [290,780,60x15] #efd9b5 \u2192 #edd3ab; s51 through screen [520,780,80x30] med #c3b18c (q95 #f0dcb8).",
+   "notes": "Pale warm concrete that nearly blows out in sun. Base #d2c49f / #e8dcbc in sun, #b3a685 where tree shadows cross, 1px #8f8670 for edges and expansion joints. The paths cut across the lawn diagonally in wide Y and X shapes."
+  },
+  {
+   "name": "Sky (horizon to higher)",
+   "ramp": [
+    "#7da4bf",
+    "#96baca",
+    "#b4cfdc",
+    "#cde2ea",
+    "#e3eef0"
+   ],
+   "measured": "s49 unscreened upper sky [460,25,100x60] med #96baca (p10 #92b3c2, p90 #9bbfcf); s51 screened high sky [420,40,280x250] q95 #c6dee7; s48 high [300,100,350x100] #d8e2e8 \u2192 de-veiled #d2dee5; s48 mid [230,230,200x80] #e3ebed; s48 near horizon [20,320,140x80] #e5f0f2; clouds through screen s49 [200,300,150x100] q5 #94a7b4 / q95 #d9e6f0. The zenith step #7da4bf is extrapolated one step deeper, because the camera never saw high sky without glare.",
+   "notes": "Pale, hazy afternoon blue (hue about 225\u2013240\u00b0) with low chroma, brightening strongly toward the horizon and toward the sun. Going up from the horizon: #e3eef0 at the horizon, #cde2ea, #b4cfdc, #96baca, #7da4bf at the top of the window. Fair-weather cumulus: lit #eef2f2, shaded undersides #b4c3ce. From inside, the sky through the window should be the brightest thing in frame and bloom over the mullions."
+  },
+  {
+   "name": "Limestone sill / parapet outside",
+   "ramp": [
+    "#4a4136",
+    "#85705a",
+    "#a9896b",
+    "#cbb79c",
+    "#e2d2bf"
+   ],
+   "measured": "f14 parapet top [20,1012,400x25] raw #e1d2c0 \u2192 de-veiled #dccbb8 (q10 #af9e87); f14 parapet face [20,1090,400x90] #b79c82 \u2192 #a9886a; s48 top [0,820,640x30] #cec1ad \u2192 #c6b7a1, face #937b68; s51 sunlit ledge [130,1050,160x180] med #bbb49c (q95 #e4ddc5), ledge in shade [420,1080,280x150] #3d3f34; s50 ledge [160,1150,300x100] #afa183.",
+   "notes": "Buff, warm limestone coping on a parapet just outside the window. The layout outside is: a flat roof or terrace with square gray pavers right below the window, then the parapet, then the quad. Sun-struck top #e2d2bf / #cbb79c. The vertical face in shade turns warm tan (#a9896b / #85705a) from bounce off the sunlit pavers. Deep shadow and joints #4a4136. Weathered, with sparse darker stains and joints every 2\u20133 ft."
+  },
+  {
+   "name": "Distant building (Notre Dame yellow brick + slate)",
+   "ramp": [
+    "#4b473c",
+    "#7a745f",
+    "#a89c7c",
+    "#c9bc93",
+    "#ddd0a6"
+   ],
+   "measured": "St. Ed's own wing seen through the screen: s49 brick [440,600,80x150] med #b7b090; s49 lower sunlit [380,820,110x100] #ccc195 (q95 #ddd1a4); s50 sunlit [330,780,80x80] #b7ac88 (q95 #e7ddb7); s50 shaded face [480,600,100x150] #767567. Distant spire building: f14 [560,670,110x80] de-veiled #63635f (q90 #9a8c75); f14 slate roof [530,618,120x25] #7f898a \u2192 #596e75; s48 building [300,580,120x70] #7a756d \u2192 #524a48.",
+   "notes": "Pale cream-yellow Notre Dame brick with Romanesque round-arched windows (deep recesses #4b473c) and lighter limestone trim and cornice (#ddd0a6). Sunlit #c9bc93 / #ddd0a6; shade #7a745f; distance haze pushes it toward #a89c7c and gray. Roofs and spires are gray-blue slate: #4f5f66 in shade, #6d7d82 lit. Use the same brick and slate pair for the Main Building and Basilica; only the Dome itself is gold."
+  },
+  {
+   "name": "Extra: corridor carpet at his door (gray berber)",
+   "ramp": [
+    "#57524a",
+    "#6f6a5c",
+    "#8c8471",
+    "#aaa595",
+    "#c2bead"
+   ],
+   "measured": "s27 [330,950,150x150] med #a9a79a \u2192 #aea997 (the label in this frame reads neutral, #d4d9de); f07 in shade [40,1450,220x200] #6e6a5c (q5 #625c4f, q95 #7d786a); s23 [450,960,100x150] #8a8270; s06 [60,1110,280x120] #9b8866 \u2192 #a09277.",
+   "notes": "Different from the beige lounge carpet: a cool greige loop pile with fine horizontal berber lines (1px #7e786a lines every 2\u20133px at low contrast). Useful if the hero ever shows the doorway or hall."
+  },
+  {
+   "name": "Extra: frosted transom glass over doors",
+   "ramp": [
+    "#8c8775",
+    "#b4b6a2",
+    "#cfd4c2",
+    "#eef2e6"
+   ],
+   "measured": "s06 transom [380,60,300x150] raw #d0d1b0 \u2192 #d6e0cd; f02 [300,60,600x200] #c8c7ac; s15 [580,70,100x140] med #8c7862 (q90 #d5ccba).",
+   "notes": "Frosted glass in an oak frame above every hall door. It glows a pale celadon-gray (#cfd4c2, with #eef2e6 hot spots) when the room behind is lit, and a duller warm gray (#8c8775) when it isn't."
+  },
+  {
+   "name": "Extra: gilt frames and sepia prints (hall/lounge)",
+   "ramp": [
+    "#4f4234",
+    "#7b684e",
+    "#a8844f",
+    "#d4a85e",
+    "#eec574"
+   ],
+   "measured": "s15 portrait frame, right side [308,40,10x380] med #7b684e (q95 #ba8e54); bottom [106,438,200x8] med #a07f52 / q95 #ecbd72; top [60,8,230x10] q95 #eeb862. Sepia print [100,60,180x350] raw #be986b \u2192 #dcbd8c (q10 raw #825e47, q90 #e0b678).",
+   "notes": "Large historic sepia photographs and campus prints hang on the navy walls in narrow gilt or dark frames. Sepia print ramp: #7a5a44 #97765f #c09c70 #dcbd8c #ecd3a4. This gold is muted gilt, less saturated than ND gold."
+  },
+  {
+   "name": "Extra: lounge cherry casework and tables",
+   "ramp": [
+    "#3d1c0c",
+    "#5f2e13",
+    "#8a4a2a",
+    "#b6643f",
+    "#c98564"
+   ],
+   "measured": "s15 cabinet front [60,770,130x80] #562a14 \u2192 #64361d; s16 cabinet side [440,520,250x40] q25 #54260d \u2192 #5f2e13; s14 lit table top [250,670,60x30] med #bf7053; s14 round table [500,870,120x60] #c1613b.",
+   "notes": "Orange-red cherry casework in the lounge, clearly redder than the oak. Optional accent wood."
+  },
+  {
+   "name": "Extra: room trim (baseboard + picture rail)",
+   "ramp": [
+    "#2b1409",
+    "#4a2e1c",
+    "#5e3d2a",
+    "#987969"
+   ],
+   "measured": "Baseboard: s34 [225,612,60x22] #2b1606 \u2192 #40240f, lit [470,660,140x20] q75 #6f5c47 \u2192 #9e876f; s40 [250,612,70x18] #35130c \u2192 #3a160f; s43 [400,765,110x15] #826657 \u2192 #987969. Picture-rail wood strip, darkest pixel per column in f13: x=700,y=905 #523621 and x=850,y=885 #5c3b2a. Painted ledge above it: s43 [200,132,500x14] #a89a7f \u2192 #c4b698.",
+   "notes": "A roughly 4 in dark wood baseboard runs all around, in the darkest steps of the furniture-wood family. The picture rail, about 2 ft below the ceiling, is a cream-painted ledge with a thin dark wood strip under it. Draw it as a crisp 1px dark line plus a 1px light ledge highlight; it sells the ceiling height."
+  },
+  {
+   "name": "Extra: sink vanity",
+   "ramp": [
+    "#9d8e71",
+    "#c2b393",
+    "#ddcdad",
+    "#ece0c6"
+   ],
+   "measured": "s34 counter [10,280,80x180] raw #9d8e71 \u2192 #ddcdad; vanity cabinet [10,590,100x180] #2a170c \u2192 #3f2618; stainless grab bar [300,180,350x60] q10 #665744 \u2192 #91806b, q90 #897864 \u2192 #c1ae9a (warm cast in this frame).",
+   "notes": "Cream laminate counter with an integral oval sink (use #ece0c6 for the bowl). Dark wood cabinet below, using the dark steps of the furniture-wood ramp. Chrome faucet; stainless grab bar on the adjacent wall."
+  },
+  {
+   "name": "Extra: roof pavers below the window",
+   "ramp": [
+    "#5c5956",
+    "#77726d",
+    "#8f8983",
+    "#a9a29a"
+   ],
+   "measured": "f14 [150,1250,650x100] raw #97918c \u2192 de-veiled #7f7978 (q95 sunlit #cabcae); s48 [30,1030,580x200] #818082.",
+   "notes": "A flat roof or terrace directly outside the window: large square gray concrete pavers with 1px dark joints (#5c5956); sunlit squares #a9a29a. It sits between the window and the limestone parapet."
+  }
+ ],
+ "lighting": "METHOD: Every swatch is a median (or luminance-ranked percentile) of a hand-picked crop. Frames were chosen by a Laplacian sharpness scan; the sharp ones are s05, s15, s16, s23, s27, s41, s46\u2013s51, f07 and f14. Values are linearized, then normalized per frame against an in-frame white reference. Hall frames use a paper door sign (s06), white plastic bins (s09, s16), the side of a white coffee machine (s15), a white AC unit (s05) and shipping labels (s23, s27, f07); these are mapped to about #d6d3cc\u2013#e4e1da. Room frames are anchored on the lit off-white wall or ceiling (s43, s45, s40; in s45 the unlit fixture reads neutral) and mapped to about #ddd3c0 / #e2dfd8. White balance is corrected only 50\u201370% toward the reference, so sunlit warmth and skylight coolness survive. The exterior keeps the camera's daylight white balance. Two unscreened frames (f14, s48) are taken through clean glass, so veiling glare was subtracted using the darkest conifer pixels as the veil. The screened frames (s49\u2013s51) are read from upper-percentile gap pixels. The final ramps are a judgment over that consensus, built in OKLab with monotonic lightness (cool shadows, warm highlights where the data supports it). Scripts are in /private/tmp/claude-501/-Users-zanejohnson/9b3a7547-f28f-4e36-ad93-6908f04a6517/scratchpad/palette-tools/ (px.py, norm.py, ramps.py). A swatch sheet showing ramps vs measured anchors is at /private/tmp/claude-501/-Users-zanejohnson/9b3a7547-f28f-4e36-ad93-6908f04a6517/scratchpad/palette-work/swatch.png. COLOR TEMPERATURE: The hall and lounge are lit by warm artificial light, about 3000\u20133500K. White references there read R/B 1.2\u20131.3 (bin #c2b2a1, door sign #e1d1b5 raw). That cast turns the navy paint almost neutral gray in camera and pushes the oak to saturated amber under a lamp (#a56007). The room itself is lit by daylight. Direct sun is warm: sunlit wood goes vivid orange (desk hutch #d28768 \u2192 #facd99, chair #f0c094), the heater face warms to #c3977c, and sun patches on the floor clip to white (#efefef). Skylight fill is cool: the wall facing the window reads #b4bebe and the floor reflects #dbe7eb\u2013#e3eded. So the room's signature is warm-orange sunlit surfaces against cool, airy shadow planes. WINDOW BRIGHTNESS: The window is about 2\u20133 stops brighter than the room. Exposing for the room (s40, s41, s46) clips the glass to near-white, washes the view out and blooms over the dark frames. Exposing for the window (s32) drops the walls to about #947f62 and turns the beige roller shade into a glowing #8a7860\u2013#aba08b panel. In the art, make the window panes the brightest values in the scene with a low-contrast, desaturated view and a 1\u20132px glow bleeding onto the frame. The upper transom view (unscreened) is clearer and bluer than the screened lower sash. FLOOR REFLECTIONS: The glossy vinyl tile shows a long, cool-white vertical glare streak (#dde6e7\u2013#e3eded) directly below the window, running toward the viewer. Sunlit trapezoids (#fbf7ee with #ffffff cores, soft 1\u20132px edges) land just inside the window and near the bed. Dark furniture legs make short, blurry downward reflections, and tile seams are barely visible. SHADOW COLOR: Interior shadows are warm from bounce off cream walls and wood. Under the desk: #907760 normalized (#7a644f raw). Wall corners: #8f8777. Ceiling corners: #bdaf9b. Planes that face the window but sit out of the sun stay cool (wall shadow about #b4b3aa, mattress sides #3c4964). The hall is dim and warm, with deep brown shadow under the wainscot cap (#3a1b05) and under the transom heads. Exterior shadows are cooler and greener: limestone and paver shade #3d3f34 raw, lawn under trees #55653c, tree interiors #24312a. Foliage is backlit and hazy, which reads blue-gray, and distant buildings lose contrast. The screen adds a gray veil and drops brightness about 18% on everything seen through the lower sash. In the footage the sun comes in steeply and lands near the window wall. For the requested light beams, warm beam landings around #f5ebd6 on walls and #fbf7ee on the floor match what was observed. The footage is late summer (no fall color), so autumn foliage has to be chosen rather than measured."
+}
