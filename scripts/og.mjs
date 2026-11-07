@@ -14,7 +14,7 @@ import { capabilities } from '../src/data/capabilities.ts';
 const CHROME = process.env.CHROME ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const url = p => pathToFileURL(resolve(p)).href;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const host = 'zanejohnson.vercel.app';
+const host = 'zanenaz.com';
 
 // same drawing as src/components/Icon.astro
 function icon(name, accent, size) {

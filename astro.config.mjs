@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://zanejohnson.vercel.app',
+  site: 'https://zanenaz.com',
   trailingSlash: 'never',
   build: { format: 'file' },
 });
