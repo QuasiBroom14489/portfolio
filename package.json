@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "scene": "node scripts/extract-scene.mjs",
+    "poster": "node scripts/poster.mjs",
     "og": "node scripts/og.mjs"
   },
   "dependencies": {

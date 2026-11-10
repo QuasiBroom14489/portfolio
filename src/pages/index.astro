@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 import { site } from '../data/site';
 import { capabilities } from '../data/capabilities';
 import { statusClass } from '../lib/inline';
+import { HIRES } from '../scene/hires';
 
 const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 const flagships = all.filter(p => p.data.tier === 'flagship');
@@ -14,7 +15,10 @@ const topCaps = capabilities.slice(0, 6);
 <Base>
   <section id="intro" class="intro" aria-label="Intro: my dorm room in St. Edward's Hall">
     <div class="stage">
-      <img class="poster" src="/scene/room.png" width="640" height="360" alt="" />
+      <picture>
+        <source media={HIRES} srcset="/scene/room-2x.png" />
+        <img class="poster" src="/scene/room.png" width="640" height="360" alt="" />
+      </picture>
       <canvas width="640" height="360" role="img" aria-label="Pixel-art scene of my St. Edward's Hall dorm room on a sunny fall afternoon. Scrolling pushes in to the desk under the window, opens the laptop, and zooms into its screen, which is this site's desktop."></canvas>
       <div class="cap">
         <p class="nm">{site.name}</p>
