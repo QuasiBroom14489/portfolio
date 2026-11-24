@@ -118,6 +118,9 @@ const topCaps = capabilities.slice(0, 6);
   .intro { display: none; }
   :global(html.js:not(.skip-intro)) .intro { display: block; position: relative; height: 400vh; }
   :global(html.js:not(.skip-intro)) .desk { margin-top: -100vh; }
+  /* the intro's last 100vh overlaps the desk and paints above it; once the scene
+     has faded, let clicks through to the desktop windows underneath */
+  :global(html.intro-done) .intro { pointer-events: none; }
   :global(html) { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
   .stage { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; z-index: 30; background: var(--night); display: grid; place-items: center; }
