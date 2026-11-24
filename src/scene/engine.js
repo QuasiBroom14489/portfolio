@@ -653,7 +653,7 @@ function drawStickers() {
   sticker(20, 29, 29, 9, rrIn(29, 9, 2), band('#ffc98a', '#f4a95c', '#c47d36', 9));
   text('ENCORE', 23, 31, '#2a1606');
   sticker(52, 29, 33, 9, rrIn(33, 9, 2), band('#b59cff', '#8f6bff', '#6a48d6', 9));
-  text('ALPHALAB', 53, 31, '#1b1030');
+  text('0NPACE', 57, 31, '#1b1030');
   sticker(88, 29, 47, 9, rrIn(47, 9, 2), band('#ffffff', '#f6f3ec', '#d8d2c4', 9));
   for (const [x, c] of [[91, '#e5484d'], [94, '#f5a524'], [97, '#30a46c']]) { px(x, 32, c); px(x, 33, c); }
   text('OFFERDESK', 100, 31, '#1b1d24');
@@ -678,7 +678,7 @@ function drawScreen() {
   text('DATA + AI', 13, 31, METAL[2], 1); text('SYSTEMS', 13, 38, METAL[2], 1);
   text('CS NOTRE DAME', 13, 46, OAK[3], 1);
   vl(83, 15, 54, '#05070f', 1); hl(10, 83, 54, '#05070f', 1);
-  [['ENCORE', '#f4a95c'], ['VESPER', '#4ce0ff'], ['OFFERDESK', '#f6f3ec'], ['ALPHALAB', '#8f6bff']].forEach(([n, c], i) => {
+  [['ENCORE', '#f4a95c'], ['VESPER', '#4ce0ff'], ['OFFERDESK', '#f6f3ec'], ['0NPACE', '#8f6bff']].forEach(([n, c], i) => {
     const x = 92, y = 12 + i * 13, gl = '#1b2030';
     rect(x, y, 9, 9, c, 1); hl(x, x + 8, y, '#ffffff', 1); hl(x, x + 8, y + 8, '#00000a', 1);
     if (i === 0) { vl(x + 5, y + 2, y + 6, gl, 1); px(x + 4, y + 6, gl, 1); px(x + 3, y + 6, gl, 1); px(x + 6, y + 2, gl, 1); }

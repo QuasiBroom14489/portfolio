@@ -7,16 +7,15 @@ export const capabilities: Capability[] = [
     blurb: 'Schemas, ingestion pipelines and append-only histories that stay trustworthy.',
     proof: [
       { project: 'encore', text: '44 migrations, 32 tables with row-level security, LLM ingestion with confidence gating' },
-      { project: 'alphalab', text: 'Schema v8, 24 tables, 26 append-only triggers, point-in-time joins across 11 feeds' },
       { project: 'offerdesk', text: 'Event-sourced log, 7 migrations, status derived from history' },
       { project: 'vesper', text: 'Append-only event log as the source of truth; rebuildable indexes' },
+      { project: '0npace', text: 'Event log with dedupe keys so repeated syncs and retried captures never duplicate' },
     ],
   },
   {
     key: 'stats', label: 'Statistics & quant research',
-    blurb: 'Out-of-sample testing and corrections for how many things you tried.',
+    blurb: 'Held-out evaluation, with the limits reported.',
     proof: [
-      { project: 'alphalab', text: 'Deflated Sharpe, pre-registration, out-of-sample-only verdicts, look-ahead tests' },
       { project: 'nudges', text: 'Held-out logistic model and a what-if replay over 343 hand-judged nudges, limits reported' },
     ],
   },
@@ -26,9 +25,8 @@ export const capabilities: Capability[] = [
     proof: [
       { project: 'vesper', text: '39 MCP tools; routing across Claude, Codex and a local model with failover' },
       { project: 'offerdesk', text: 'MCP server with 18 tools, 9 safe to auto-approve' },
-      { project: 'alphalab', text: '26-tool MCP server; every AI output validated before storage' },
       { project: 'encore', text: 'Structured extraction into a Zod schema with confidence thresholds' },
-      { project: 'shopwright', text: 'LLM editor grading against a rubric; every call logged with cost' },
+      { project: '0npace', text: 'Ask answers only from local items with checked citations; per-plan AI caps enforced on the proxy' },
     ],
   },
   {
@@ -42,8 +40,8 @@ export const capabilities: Capability[] = [
     proof: [
       { project: 'encore', text: 'Next.js app with 82 pages and 19 API routes, deployed on Vercel' },
       { project: 'offerdesk', text: 'React + Fastify, 43 REST routes, hosted on Vercel' },
-      { project: 'alphalab', text: 'FastAPI (20 endpoints) + React dashboard (7 pages)' },
       { project: 'vesper', text: 'Fastify daemon with ~80 routes; Tauri desktop app' },
+      { project: '0npace', text: 'Hono hub, Next.js site with Clerk + Stripe billing, Tauri desktop shell' },
     ],
   },
   {
@@ -51,15 +49,16 @@ export const capabilities: Capability[] = [
     blurb: 'Native clients on top of one shared backend.',
     proof: [
       { project: 'vesper', text: 'SwiftUI iPhone/iPad app with widgets and a Share extension, plus a Tauri desktop app' },
+      { project: '0npace', text: 'Signed Mac + Windows releases; SwiftUI iPhone app paired by QR over Tailscale' },
     ],
   },
   {
     key: 'testing', label: 'Testing, CI & correctness',
     blurb: 'Tests that prove the hard properties, not just the happy path.',
     proof: [
-      { project: 'alphalab', text: '518 test cases, including truncation tests for every indicator' },
       { project: 'vesper', text: '321 tests; secret scanning and dependency audits in CI' },
       { project: 'offerdesk', text: '123 test cases; lint, typecheck and tests on every push' },
+      { project: '0npace', text: '529 test cases; CI on macOS, Windows and Linux' },
     ],
   },
   {
@@ -68,6 +67,7 @@ export const capabilities: Capability[] = [
     proof: [
       { project: 'offerdesk', text: 'OAuth with PKCE, AES-256-GCM-encrypted tokens, per-user workspaces' },
       { project: 'vesper', text: 'Security audit fixed 14 advisories; token auth on every route' },
+      { project: '0npace', text: 'User data stays on their computer; read-only Google scopes; approval queue before any write' },
     ],
   },
   {
@@ -76,6 +76,7 @@ export const capabilities: Capability[] = [
     proof: [
       { project: 'offerdesk', text: 'Keyboard-first UI with traffic-light follow-up signals' },
       { project: 'encore', text: 'Four audiences, weekly digest, two cities' },
+      { project: '0npace', text: 'Guided onboarding; price shown before download' },
     ],
   },
   {
